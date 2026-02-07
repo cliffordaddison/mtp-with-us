@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Logo } from './Logo'
 import { useActiveSection } from '../hooks/useActiveSection'
@@ -14,14 +14,22 @@ const navLinkClass = (isActive: boolean) =>
       : 'text-slate-600 hover:text-[var(--accent)]'
   }`
 
+const mobileNavLinkClass = (isActive: boolean) =>
+  `block py-3 px-4 font-semibold transition-colors border-b border-slate-100 last:border-0 ${
+    isActive ? 'text-[var(--accent)] bg-[var(--accent)]/5' : 'text-slate-600 hover:text-[var(--accent)] hover:bg-slate-50'
+  }`
+
 export function Layout({ children }: LayoutProps) {
   const activeSection = useActiveSection()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const closeMobileMenu = () => setMobileMenuOpen(false)
 
   return (
     <div className="min-h-screen bg-slate-50">
       <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-16 py-2 sm:py-0 flex items-center justify-between gap-3">
-          <Link to="/" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0" onClick={closeMobileMenu}>
             <Logo className="size-8 sm:size-9 transition-transform group-hover:scale-105 shrink-0" />
             <div className="flex flex-col min-w-0">
               <span className="font-display text-base sm:text-xl tracking-tight text-slate-900 leading-tight">MTPWITHUS</span>
@@ -36,17 +44,41 @@ export function Layout({ children }: LayoutProps) {
             <Link to="/events" className={navLinkClass(activeSection === 'events')}>Events</Link>
             <Link to="/#contact" className={navLinkClass(activeSection === 'contact')}>Contact</Link>
           </nav>
-          <Link
-            to="/register"
-            className={`flex items-center justify-center rounded-lg h-9 sm:h-10 px-3 sm:px-5 text-xs sm:text-sm font-bold transition-all shrink-0 ${
-              activeSection === 'register'
-                ? 'bg-[var(--accent)] text-white ring-2 ring-[var(--accent)] ring-offset-2'
-                : 'bg-[var(--primary)] text-white hover:bg-slate-800'
-            }`}
-          >
-            Get Started
-          </Link>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors"
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? (
+                <svg className="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+              ) : (
+                <svg className="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
+              )}
+            </button>
+            <Link
+              to="/register"
+              className={`flex items-center justify-center rounded-lg h-9 sm:h-10 px-3 sm:px-5 text-xs sm:text-sm font-bold transition-all shrink-0 ${
+                activeSection === 'register'
+                  ? 'bg-[var(--accent)] text-white ring-2 ring-[var(--accent)] ring-offset-2'
+                  : 'bg-[var(--primary)] text-white hover:bg-slate-800'
+              }`}
+            >
+              Get Started
+            </Link>
+          </div>
         </div>
+        {mobileMenuOpen && (
+          <nav className="md:hidden border-t border-slate-200 bg-white shadow-lg">
+            <Link to="/#who-we-are" className={mobileNavLinkClass(activeSection === 'who-we-are')} onClick={closeMobileMenu}>About</Link>
+            <Link to="/#services" className={mobileNavLinkClass(activeSection === 'services')} onClick={closeMobileMenu}>Services</Link>
+            <Link to="/#team" className={mobileNavLinkClass(activeSection === 'team')} onClick={closeMobileMenu}>Squad</Link>
+            <Link to="/#careers" className={mobileNavLinkClass(activeSection === 'careers')} onClick={closeMobileMenu}>Careers</Link>
+            <Link to="/events" className={mobileNavLinkClass(activeSection === 'events')} onClick={closeMobileMenu}>Events</Link>
+            <Link to="/#contact" className={mobileNavLinkClass(activeSection === 'contact')} onClick={closeMobileMenu}>Contact</Link>
+          </nav>
+        )}
       </header>
       {children}
     </div>
