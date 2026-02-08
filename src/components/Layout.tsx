@@ -41,8 +41,8 @@ export function Layout({ children }: LayoutProps) {
             <Link to="/#services" className={navLinkClass(activeSection === 'services')}>Services</Link>
             <Link to="/#team" className={navLinkClass(activeSection === 'team')}>Squad</Link>
             <Link to="/#careers" className={navLinkClass(activeSection === 'careers')}>Careers</Link>
-            <Link to="/events" className={navLinkClass(activeSection === 'events')}>Events</Link>
             <Link to="/#contact" className={navLinkClass(activeSection === 'contact')}>Contact</Link>
+            <Link to="/events" className={navLinkClass(activeSection === 'events')}>Events</Link>
           </nav>
           <div className="flex items-center gap-2">
             <button
