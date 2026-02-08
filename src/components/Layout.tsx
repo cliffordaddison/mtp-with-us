@@ -101,11 +101,11 @@ function FooterContent() {
             <p className="text-slate-400 text-sm leading-relaxed">
               MTP Talent Group is a culture connecting talent boutique delivering positive provoking content, curated events, and brand exclusive moments.
             </p>
-            <div className="space-y-1 text-sm">
+            {/* <div className="space-y-1 text-sm">
               <p className="font-semibold text-white">Owner, Maximize the Potential</p>
               <a href="mailto:mtpwithus@gmail.com" className="block text-slate-400 hover:text-white transition-colors">mtpwithus@gmail.com</a>
               <a href="tel:+16472619687" className="block text-slate-400 hover:text-white transition-colors">1(647)261-9687</a>
-            </div>
+            </div> */}
             <div className="flex gap-3">
               <a href="https://instagram.com/mtpwithus" target="_blank" rel="noopener noreferrer" className="size-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--accent)] transition-colors" aria-label="Instagram">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
@@ -128,7 +128,7 @@ function FooterContent() {
             <h5 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Contact</h5>
             <ul className="space-y-3 text-sm text-slate-400">
               <li><a href="mailto:mtpwithus@gmail.com" className="hover:text-white transition-colors">mtpwithus@gmail.com</a></li>
-              <li><a href="tel:+16472619687" className="hover:text-white transition-colors">1(647)261-9687</a></li>
+              <li><a href="tel:+16472619687" className="hover:text-white transition-colors">+1 (647) 261-9687</a></li>
             </ul>
           </div>
           <div>
