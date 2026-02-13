@@ -96,8 +96,8 @@ export default function Register() {
       <div className="flex-grow flex flex-col md:flex-row min-h-[calc(100vh-64px)]">
         {/* Hero Background Panel */}
         <div className="hidden md:flex md:w-2/5 lg:w-2/5 relative bg-slate-900 items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/hero-3panel.png')] bg-cover bg-center opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
+          <div className="absolute inset-0 bg-[url('/connection-talent.png')] bg-cover bg-center opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 via-slate-900/60 to-slate-900/50" />
           <div className="relative z-10 max-w-md px-12 text-center md:text-left">
             <h2 className="font-display text-4xl lg:text-5xl text-white uppercase tracking-tight leading-tight mb-6">
               Your <span className="text-[var(--accent)]">Journey</span> Starts Here

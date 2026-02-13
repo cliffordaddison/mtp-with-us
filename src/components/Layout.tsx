@@ -37,11 +37,86 @@ export function Layout({ children }: LayoutProps) {
             </div>
           </Link>
           <nav className="hidden md:flex items-center gap-8 shrink-0">
-            <Link to="/#who-we-are" className={navLinkClass(activeSection === 'who-we-are')}>About</Link>
-            <Link to="/#services" className={navLinkClass(activeSection === 'services')}>Services</Link>
-            <Link to="/#team" className={navLinkClass(activeSection === 'team')}>Team</Link>
-            <Link to="/#careers" className={navLinkClass(activeSection === 'careers')}>Careers</Link>
-            <Link to="/#contact" className={navLinkClass(activeSection === 'contact')}>Contact</Link>
+            <Link 
+              to="/#who-we-are" 
+              className={navLinkClass(activeSection === 'who-we-are')}
+              onClick={(e) => {
+                const hash = '#who-we-are'
+                const element = document.getElementById('who-we-are')
+                if (element && globalThis.location.pathname === '/') {
+                  e.preventDefault()
+                  const top = element.getBoundingClientRect().top + globalThis.scrollY - 120
+                  globalThis.scrollTo({ top, behavior: 'smooth' })
+                  globalThis.history.pushState(null, '', hash)
+                }
+              }}
+            >
+              About
+            </Link>
+            <Link 
+              to="/#services" 
+              className={navLinkClass(activeSection === 'services')}
+              onClick={(e) => {
+                const hash = '#services'
+                const element = document.getElementById('services')
+                if (element && globalThis.location.pathname === '/') {
+                  e.preventDefault()
+                  const top = element.getBoundingClientRect().top + globalThis.scrollY - 120
+                  globalThis.scrollTo({ top, behavior: 'smooth' })
+                  globalThis.history.pushState(null, '', hash)
+                }
+              }}
+            >
+              Services
+            </Link>
+            <Link 
+              to="/#team" 
+              className={navLinkClass(activeSection === 'team')}
+              onClick={(e) => {
+                const hash = '#team'
+                const element = document.getElementById('team')
+                if (element && globalThis.location.pathname === '/') {
+                  e.preventDefault()
+                  const top = element.getBoundingClientRect().top + globalThis.scrollY - 120
+                  globalThis.scrollTo({ top, behavior: 'smooth' })
+                  globalThis.history.pushState(null, '', hash)
+                }
+              }}
+            >
+              Team
+            </Link>
+            <Link 
+              to="/#careers" 
+              className={navLinkClass(activeSection === 'careers')}
+              onClick={(e) => {
+                const hash = '#careers'
+                const element = document.getElementById('careers')
+                if (element && globalThis.location.pathname === '/') {
+                  e.preventDefault()
+                  const top = element.getBoundingClientRect().top + globalThis.scrollY - 120
+                  globalThis.scrollTo({ top, behavior: 'smooth' })
+                  globalThis.history.pushState(null, '', hash)
+                }
+              }}
+            >
+              Careers
+            </Link>
+            <Link 
+              to="/#contact" 
+              className={navLinkClass(activeSection === 'contact')}
+              onClick={(e) => {
+                const hash = '#contact'
+                const element = document.getElementById('contact')
+                if (element && globalThis.location.pathname === '/') {
+                  e.preventDefault()
+                  const top = element.getBoundingClientRect().top + globalThis.scrollY - 120
+                  globalThis.scrollTo({ top, behavior: 'smooth' })
+                  globalThis.history.pushState(null, '', hash)
+                }
+              }}
+            >
+              Contact
+            </Link>
             <Link to="/events" className={navLinkClass(activeSection === 'events')}>Events</Link>
           </nav>
           <div className="flex items-center gap-2">
@@ -71,12 +146,92 @@ export function Layout({ children }: LayoutProps) {
         </div>
         {mobileMenuOpen && (
           <nav className="md:hidden border-t border-slate-200 bg-white shadow-lg">
-            <Link to="/#who-we-are" className={mobileNavLinkClass(activeSection === 'who-we-are')} onClick={closeMobileMenu}>About</Link>
-            <Link to="/#services" className={mobileNavLinkClass(activeSection === 'services')} onClick={closeMobileMenu}>Services</Link>
-            <Link to="/#team" className={mobileNavLinkClass(activeSection === 'team')} onClick={closeMobileMenu}>Team</Link>
-            <Link to="/#careers" className={mobileNavLinkClass(activeSection === 'careers')} onClick={closeMobileMenu}>Careers</Link>
+            <Link 
+              to="/#who-we-are" 
+              className={mobileNavLinkClass(activeSection === 'who-we-are')} 
+              onClick={(e) => {
+                closeMobileMenu()
+                const hash = '#who-we-are'
+                const element = document.getElementById('who-we-are')
+                if (element && globalThis.location.pathname === '/') {
+                  e.preventDefault()
+                  const top = element.getBoundingClientRect().top + globalThis.scrollY - 120
+                  globalThis.scrollTo({ top, behavior: 'smooth' })
+                  globalThis.history.pushState(null, '', hash)
+                }
+              }}
+            >
+              About
+            </Link>
+            <Link 
+              to="/#services" 
+              className={mobileNavLinkClass(activeSection === 'services')} 
+              onClick={(e) => {
+                closeMobileMenu()
+                const hash = '#services'
+                const element = document.getElementById('services')
+                if (element && globalThis.location.pathname === '/') {
+                  e.preventDefault()
+                  const top = element.getBoundingClientRect().top + globalThis.scrollY - 120
+                  globalThis.scrollTo({ top, behavior: 'smooth' })
+                  globalThis.history.pushState(null, '', hash)
+                }
+              }}
+            >
+              Services
+            </Link>
+            <Link 
+              to="/#team" 
+              className={mobileNavLinkClass(activeSection === 'team')} 
+              onClick={(e) => {
+                closeMobileMenu()
+                const hash = '#team'
+                const element = document.getElementById('team')
+                if (element && globalThis.location.pathname === '/') {
+                  e.preventDefault()
+                  const top = element.getBoundingClientRect().top + globalThis.scrollY - 120
+                  globalThis.scrollTo({ top, behavior: 'smooth' })
+                  globalThis.history.pushState(null, '', hash)
+                }
+              }}
+            >
+              Team
+            </Link>
+            <Link 
+              to="/#careers" 
+              className={mobileNavLinkClass(activeSection === 'careers')} 
+              onClick={(e) => {
+                closeMobileMenu()
+                const hash = '#careers'
+                const element = document.getElementById('careers')
+                if (element && globalThis.location.pathname === '/') {
+                  e.preventDefault()
+                  const top = element.getBoundingClientRect().top + globalThis.scrollY - 120
+                  globalThis.scrollTo({ top, behavior: 'smooth' })
+                  globalThis.history.pushState(null, '', hash)
+                }
+              }}
+            >
+              Careers
+            </Link>
             <Link to="/events" className={mobileNavLinkClass(activeSection === 'events')} onClick={closeMobileMenu}>Events</Link>
-            <Link to="/#contact" className={mobileNavLinkClass(activeSection === 'contact')} onClick={closeMobileMenu}>Contact</Link>
+            <Link 
+              to="/#contact" 
+              className={mobileNavLinkClass(activeSection === 'contact')} 
+              onClick={(e) => {
+                closeMobileMenu()
+                const hash = '#contact'
+                const element = document.getElementById('contact')
+                if (element && globalThis.location.pathname === '/') {
+                  e.preventDefault()
+                  const top = element.getBoundingClientRect().top + globalThis.scrollY - 120
+                  globalThis.scrollTo({ top, behavior: 'smooth' })
+                  globalThis.history.pushState(null, '', hash)
+                }
+              }}
+            >
+              Contact
+            </Link>
           </nav>
         )}
       </header>
