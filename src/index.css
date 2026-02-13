@@ -1,7 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #0f172a;
+  /* Base surfaces and text from owner palette (Bright Northern Lights) */
+  --primary: var(--combo-northern-forest);
+  --surface: var(--combo-northern-white);
+  --surface-alt: #f8faf8;
+  --text-primary: var(--combo-northern-black);
+  --text-secondary: #374151;
+  --border-muted: rgba(34, 139, 34, 0.15);
   
   /* ============================================
      BRIGHT NORTHERN LIGHTS - PRIMARY SYSTEM

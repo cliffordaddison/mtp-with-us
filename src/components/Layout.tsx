@@ -11,12 +11,12 @@ const navLinkClass = (isActive: boolean) =>
   `text-sm font-semibold transition-colors shrink-0 relative pb-0.5 ${
     isActive
       ? 'text-[var(--accent)] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent)] after:rounded-full'
-      : 'text-slate-600 hover:text-[var(--accent)]'
+      : 'text-[var(--text-secondary)] hover:text-[var(--accent)]'
   }`
 
 const mobileNavLinkClass = (isActive: boolean) =>
-  `block py-3 px-4 font-semibold transition-colors border-b border-slate-100 last:border-0 ${
-    isActive ? 'text-[var(--accent)] bg-[var(--accent)]/5' : 'text-slate-600 hover:text-[var(--accent)] hover:bg-slate-50'
+  `block py-3 px-4 font-semibold transition-colors border-b border-[var(--border-muted)] last:border-0 ${
+    isActive ? 'text-[var(--accent)] bg-[var(--accent)]/5' : 'text-[var(--text-secondary)] hover:text-[var(--accent)] hover:bg-[var(--surface-alt)]'
   }`
 
 export function Layout({ children }: LayoutProps) {
@@ -26,13 +26,13 @@ export function Layout({ children }: LayoutProps) {
   const closeMobileMenu = () => setMobileMenuOpen(false)
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
+    <div className="min-h-screen bg-[var(--surface-alt)]">
+      <header className="sticky top-0 z-50 w-full border-b border-[var(--border-muted)] bg-[var(--surface)]/95 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-16 py-2 sm:py-0 flex items-center justify-between gap-3">
           <Link to="/" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0" onClick={closeMobileMenu}>
             <Logo className="size-8 sm:size-9 transition-transform group-hover:scale-105 shrink-0" />
             <div className="flex flex-col min-w-0">
-              <span className="font-display text-base sm:text-xl tracking-tight text-slate-900 leading-tight">MTPWITHUS</span>
+              <span className="font-display text-base sm:text-xl tracking-tight text-[var(--text-primary)] leading-tight">MTPWITHUS</span>
               <span className="font-display text-[10px] sm:text-xs tracking-wide text-[var(--combo-northern-forest)] uppercase leading-tight border-l-2 border-[var(--combo-northern-neon)]/40 pl-2 ml-2">Maximize the Potential (MTP)</span>
             </div>
           </Link>
@@ -122,7 +122,7 @@ export function Layout({ children }: LayoutProps) {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors"
+              className="md:hidden p-2 rounded-lg text-[var(--text-secondary)] hover:bg-[var(--surface-alt)] hover:text-[var(--text-primary)] transition-colors"
               aria-label="Toggle menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -137,7 +137,7 @@ export function Layout({ children }: LayoutProps) {
               className={`flex items-center justify-center rounded-lg h-9 sm:h-10 px-3 sm:px-5 text-xs sm:text-sm font-bold transition-all shrink-0 ${
                 activeSection === 'register'
                   ? 'bg-gradient-to-r from-[var(--combo-northern-forest)] via-[var(--combo-northern-neon)] to-[var(--combo-northern-forest)] hover:from-[var(--combo-northern-neon)] hover:via-[var(--combo-northern-lime)] hover:to-[var(--combo-northern-neon)] text-[var(--combo-northern-white)] ring-2 ring-[var(--combo-northern-neon)]/40 ring-offset-2 shadow-md shadow-[var(--combo-northern-neon)]/25'
-                  : 'bg-[var(--primary)] text-white hover:bg-slate-800'
+                  : 'bg-gradient-to-r from-[var(--combo-northern-forest)] via-[var(--combo-northern-neon)] to-[var(--combo-northern-forest)] hover:from-[var(--combo-northern-neon)] hover:via-[var(--combo-northern-lime)] hover:to-[var(--combo-northern-neon)] text-[var(--combo-northern-white)] hover:opacity-95'
               }`}
             >
               Register to be contacted
@@ -145,7 +145,7 @@ export function Layout({ children }: LayoutProps) {
           </div>
         </div>
         {mobileMenuOpen && (
-          <nav className="md:hidden border-t border-slate-200 bg-white shadow-lg">
+          <nav className="md:hidden border-t border-[var(--border-muted)] bg-[var(--surface)] shadow-lg">
             <Link 
               to="/#who-we-are" 
               className={mobileNavLinkClass(activeSection === 'who-we-are')} 
@@ -214,7 +214,6 @@ export function Layout({ children }: LayoutProps) {
             >
               Careers
             </Link>
-            <Link to="/events" className={mobileNavLinkClass(activeSection === 'events')} onClick={closeMobileMenu}>Events</Link>
             <Link 
               to="/#contact" 
               className={mobileNavLinkClass(activeSection === 'contact')} 
@@ -232,6 +231,7 @@ export function Layout({ children }: LayoutProps) {
             >
               Contact
             </Link>
+            <Link to="/events" className={mobileNavLinkClass(activeSection === 'events')} onClick={closeMobileMenu}>Events</Link>
           </nav>
         )}
       </header>
@@ -242,7 +242,7 @@ export function Layout({ children }: LayoutProps) {
 
 function FooterContent() {
   return (
-    <footer id="contact" className="bg-slate-900 text-white">
+    <footer id="contact" className="bg-[var(--combo-northern-black)] text-[var(--combo-northern-white)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12">
           <div className="space-y-5">
@@ -250,16 +250,16 @@ function FooterContent() {
               <Logo className="size-10 brightness-0 invert" />
               <div className="flex flex-col">
                 <span className="font-display text-xl tracking-tight leading-tight">MTPWITHUS</span>
-                <span className="font-display text-xs tracking-wide text-slate-400 uppercase">Maximize the Potential</span>
+                <span className="font-display text-xs tracking-wide text-[var(--combo-northern-white)]/70 uppercase">Maximize the Potential</span>
               </div>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-[var(--combo-northern-white)]/80 text-sm leading-relaxed">
               MTP Talent Group is a culture connecting talent boutique delivering positive provoking content, curated events, and brand exclusive moments.
             </p>
             {/* <div className="space-y-1 text-sm">
               <p className="font-semibold text-white">Owner, Maximize the Potential</p>
-              <a href="mailto:mtpwithus@gmail.com" className="block text-slate-400 hover:text-white transition-colors">mtpwithus@gmail.com</a>
-              <a href="tel:+16472619687" className="block text-slate-400 hover:text-white transition-colors">1(647)261-9687</a>
+              <a href="mailto:mtpwithus@gmail.com" className="block text-[var(--combo-northern-white)]/80 hover:text-[var(--combo-northern-white)] transition-colors">mtpwithus@gmail.com</a>
+              <a href="tel:+16472619687" className="block text-[var(--combo-northern-white)]/80 hover:text-[var(--combo-northern-white)] transition-colors">1(647)261-9687</a>
             </div> */}
             <div className="flex gap-3">
               <a href="https://instagram.com/mtpwithus" target="_blank" rel="noopener noreferrer" className="size-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--accent)] hover:scale-110 transition-all border border-white/20 hover:border-[var(--accent)]/50" aria-label="Instagram">
@@ -269,35 +269,35 @@ function FooterContent() {
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               </a>
             </div>
-            <p className="text-xs text-slate-500">Instagram @mtpwithus · Twitter @mtpwithus</p>
+            <p className="text-xs text-[var(--combo-northern-white)]/60">Instagram @mtpwithus · Twitter @mtpwithus</p>
           </div>
           <div>
-            <h5 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Quick Links</h5>
-            <ul className="space-y-3 text-sm text-slate-400">
+            <h5 className="text-xs font-bold uppercase tracking-widest text-[var(--combo-northern-white)]/70 mb-4">Quick Links</h5>
+            <ul className="space-y-3 text-sm text-[var(--combo-northern-white)]/80">
               <li><Link to="/#services" className="hover:text-white transition-colors">Services</Link></li>
               <li><Link to="/events" className="hover:text-white transition-colors">Events</Link></li>
               <li><Link to="/register" className="hover:text-white transition-colors">Register</Link></li>
             </ul>
           </div>
           <div>
-            <h5 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Contact</h5>
-            <ul className="space-y-3 text-sm text-slate-400">
+            <h5 className="text-xs font-bold uppercase tracking-widest text-[var(--combo-northern-white)]/70 mb-4">Contact</h5>
+            <ul className="space-y-3 text-sm text-[var(--combo-northern-white)]/80">
               <li><a href="mailto:mtpwithus@gmail.com" className="hover:text-white transition-colors">mtpwithus@gmail.com</a></li>
               <li><a href="tel:+16472619687" className="hover:text-white transition-colors">+1 (647) 261-9687</a></li>
             </ul>
           </div>
           <div>
-            <h5 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Newsletter</h5>
-            <p className="text-sm text-slate-400 mb-4">Latest insights and athlete updates.</p>
+            <h5 className="text-xs font-bold uppercase tracking-widest text-[var(--combo-northern-white)]/70 mb-4">Newsletter</h5>
+            <p className="text-sm text-[var(--combo-northern-white)]/80 mb-4">Latest insights and athlete updates.</p>
             <form className="flex flex-col gap-2">
-              <input type="email" placeholder="Your email" className="bg-white/5 border border-white/10 rounded-lg h-10 px-3 text-sm text-white placeholder:text-slate-500 focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent outline-none" />
+              <input type="email" placeholder="Your email" className="bg-[var(--combo-northern-white)]/5 border border-[var(--combo-northern-white)]/10 rounded-lg h-10 px-3 text-sm text-[var(--combo-northern-white)] placeholder:text-[var(--combo-northern-white)]/50 focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent outline-none" />
               <button type="submit" className="bg-gradient-to-r from-[var(--combo-northern-forest)] to-[var(--combo-northern-neon)] hover:from-[var(--combo-northern-neon)] hover:to-[var(--combo-northern-lime)] rounded-lg h-10 text-sm font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg shadow-[var(--combo-northern-neon)]/25">Subscribe</button>
             </form>
           </div>
         </div>
-        <div className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500 text-xs">
+        <div className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[var(--combo-northern-white)]/60 text-xs">
           <p>© 2026 Maximize the Potential. All rights reserved.</p>
-          <p className="font-display text-slate-400">OUTWORK YOUR GREATEST COMPETITION...YOU!</p>
+          <p className="font-display text-[var(--combo-northern-white)]/70">OUTWORK YOUR GREATEST COMPETITION...YOU!</p>
         </div>
       </div>
     </footer>

@@ -5,14 +5,14 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-6 py-24 bg-slate-900 overflow-hidden">
+      <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-6 py-24 bg-[var(--combo-northern-black)] overflow-hidden">
         <div className="absolute inset-0 bg-[url('/hero-3panel.png')] bg-cover bg-center opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/80 to-slate-900" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--combo-northern-black)]/70 via-[var(--combo-northern-forest)]/40 to-[var(--combo-northern-black)]/90" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="font-display text-5xl sm:text-6xl md:text-8xl text-white leading-[0.95] tracking-tight uppercase">
+          <h1 className="font-display text-5xl sm:text-6xl md:text-8xl text-[var(--combo-northern-white)] leading-[0.95] tracking-tight uppercase">
             Outwork Your Greatest Competition...You!
           </h1>
-          <p className="mt-8 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg md:text-xl text-[var(--combo-northern-white)]/85 max-w-2xl mx-auto leading-relaxed">
             MTP Talent Group is a culture connecting talent boutique. We deliver positive provoking content, curated inspired events, and brand exclusive moments.
           </p>
           <Link
@@ -27,10 +27,10 @@ export default function Home() {
       {/* Who We Are */}
       <section id="who-we-are" className="py-24 scroll-mt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="font-display text-4xl md:text-5xl text-slate-900 uppercase tracking-tight mb-12">
+          <h2 className="font-display text-4xl md:text-5xl text-[var(--text-primary)] uppercase tracking-tight mb-12">
             Who We Are?
           </h2>
-          <div className="space-y-8 text-slate-600 leading-relaxed">
+          <div className="space-y-8 text-[var(--text-secondary)] leading-relaxed">
             <p>
               MTP Talent Group is a culture connecting talent boutique. Our expertise includes delivering
               positive provoking produced content, curated inspired events, fostering business development,
@@ -49,7 +49,7 @@ export default function Home() {
                 <span className="size-2 rounded-full bg-[var(--combo-northern-neon)] shadow-sm shadow-[var(--combo-northern-neon)]/50"></span>{' '}
                 Mission
               </h3>
-              <p className="text-slate-700 text-lg leading-relaxed">
+              <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
                 Our mission is always the same: To provide timely, efficient project delivery with full lifecycle
                 support backed by transparency, fueled by knowledge, topped with experience, and over-loaded with creativity.
               </p>
@@ -61,7 +61,7 @@ export default function Home() {
                 <span className="size-2 rounded-full bg-[var(--combo-northern-spearmint)] shadow-sm shadow-[var(--combo-northern-spearmint)]/50"></span>{' '}
                 Vision
               </h3>
-              <p className="text-slate-700 text-lg leading-relaxed">
+              <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
                 Build valued, trusting, and secure relationships with brand clients, talent, employees,
                 and partners through ethical and innovative leadership.
               </p>
@@ -71,9 +71,9 @@ export default function Home() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[var(--surface)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="font-display text-4xl md:text-5xl text-slate-900 uppercase tracking-tight text-center mb-16">
+          <h2 className="font-display text-4xl md:text-5xl text-[var(--text-primary)] uppercase tracking-tight text-center mb-16">
             Values
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -84,7 +84,7 @@ export default function Home() {
             ].map((v) => (
               <div key={v.title} className="p-8 rounded-2xl bg-gradient-to-br from-[var(--combo-northern-white)] to-[var(--combo-northern-white)]/90 border-2 border-[var(--accent-gray-medium)] hover:border-[var(--combo-northern-forest)]/40 hover:shadow-lg transition-all">
                 <h3 className={`font-display text-2xl text-[var(--${v.color})] uppercase mb-4`}>{v.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{v.text}</p>
+                <p className="text-[var(--text-secondary)] leading-relaxed">{v.text}</p>
               </div>
             ))}
           </div>
@@ -94,7 +94,7 @@ export default function Home() {
       {/* Services */}
       <section id="services" className="py-24 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="font-display text-4xl md:text-5xl text-slate-900 uppercase tracking-tight mb-12">
+          <h2 className="font-display text-4xl md:text-5xl text-[var(--text-primary)] uppercase tracking-tight mb-12">
             MTP Services
           </h2>
           <div className="space-y-8">
@@ -108,14 +108,14 @@ export default function Home() {
               { title: 'NIL (Name, Image, Likeness)', desc: "NIL is an important division of our growth. This is where our foot hits the accelerator for our College and High School Athletes. We provide comprehensive NIL deal procurement, brand partnership opportunities, and marketing support to help student athletes maximize their potential while maintaining NCAA compliance." },
             ].map((s) => (
               <div key={s.title} className="p-8 rounded-2xl bg-[var(--accent-white)] border-2 border-[var(--accent-gray-medium)] hover:border-[var(--accent)]/40 hover:shadow-md transition-all">
-                <h3 className="font-display text-xl text-slate-900 uppercase mb-4">{s.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{s.desc}</p>
+                <h3 className="font-display text-xl text-[var(--text-primary)] uppercase mb-4">{s.title}</h3>
+                <p className="text-[var(--text-secondary)] leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
           <div className="mt-12 p-6 rounded-2xl bg-gradient-to-br from-[var(--combo-northern-forest)]/10 via-[var(--combo-northern-spearmint)]/8 via-[var(--combo-blush-seafoam)]/5 to-[var(--combo-northern-white)] border-2 border-[var(--combo-northern-forest)]/30 shadow-sm">
             <p className="text-xs font-bold uppercase tracking-widest text-[var(--combo-northern-forest)] mb-2">Who MTP Deals With</p>
-            <p className="text-slate-600">
+            <p className="text-[var(--text-secondary)]">
               Pro Athletes | Olympians | High-School Athletes | Influencers | Entertainment Professionals | College Athletes
             </p>
           </div>
@@ -123,19 +123,19 @@ export default function Home() {
       </section>
 
       {/* Squad */}
-      <section id="team" className="py-24 bg-white scroll-mt-20">
+      <section id="team" className="py-24 bg-[var(--surface)] scroll-mt-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="font-display text-4xl md:text-5xl text-slate-900 uppercase tracking-tight mb-16">
+          <h2 className="font-display text-4xl md:text-5xl text-[var(--text-primary)] uppercase tracking-tight mb-16">
             Team
           </h2>
           <div className="mb-8 flex justify-center">
-            <div className="size-48 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-white font-display text-5xl border-4 border-slate-200 shadow-xl">
+            <div className="size-48 rounded-full bg-gradient-to-br from-[var(--combo-northern-forest)] to-[var(--combo-northern-black)] flex items-center justify-center text-[var(--combo-northern-white)] font-display text-5xl border-4 border-[var(--border-muted)] shadow-xl">
               DA
             </div>
           </div>
-          <h3 className="font-display text-2xl text-slate-900">Dean Akinmusire</h3>
+          <h3 className="font-display text-2xl text-[var(--text-primary)]">Dean Akinmusire</h3>
           <p className="text-[var(--combo-northern-forest)] font-semibold uppercase tracking-widest text-sm mt-2 mb-8 border-t border-b border-[var(--combo-northern-forest)]/25 py-2 inline-block px-4 bg-gradient-to-r from-[var(--combo-northern-white)] via-[var(--combo-northern-white)]/95 to-[var(--combo-northern-white)]">Owner and Founder</p>
-          <div className="text-left space-y-6 text-slate-600 leading-relaxed">
+          <div className="text-left space-y-6 text-[var(--text-secondary)] leading-relaxed">
             <p>Dean Akinmusire, has 20 years of service working in the retail industry where he learned how to deliver focused conversation to build strong and lasting relationship with consumers. Let&apos;s just say Dean has a knack for keeping the needs of people his main concern. Prior to that, Dean worked over 7 years in the marketing and advertising field, working closely with Fortune 500 accounts to innovatively build their brands and deliver their message. Dean easily navigated complex request, with seamless effort to bring forth a visually appealing promotion. Dean was an active participant with the launch of Honda Canada&apos;s &quot;Civic Nation&quot; campaign, delivering unparallel results to Honda&apos;s long history in Canada. He worked closely with Mercedes Benz, to formulate a marketing campaign that activated consumer interest. Dean has guided projects that included Olympians, NBA celebrity trainers, Pro tennis players, and more.</p>
             <p>After leaving his career of 20 years in 2025, Dean has embarked on a passion to guide clients through a journey that can be confusing at times. His has a determined willingness to provide clients with unwavering success, that uplift their platform and mirror their values. With the activation of Maximize the Potential (MTP) Talent Group, he is at the helm of making it all happen.</p>
             <p>Dean is a dedicated father of six children, so he understands the hustle of the sports world. Four of his six children played competitive sports, one had a small stint with TFC Academy (MLS youth Academy team). If anyone can tend to a talent&apos;s needs, deliver data caption value with patience and determination, it&apos;s Dean Akinmusire and MTP Talent Group.</p>
@@ -146,25 +146,25 @@ export default function Home() {
       {/* Careers */}
       <section id="careers" className="py-24 scroll-mt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="font-display text-4xl md:text-5xl text-slate-900 uppercase tracking-tight mb-12">
+          <h2 className="font-display text-4xl md:text-5xl text-[var(--text-primary)] uppercase tracking-tight mb-12">
             Company Potential Positions
           </h2>
           <ul className="space-y-4 mb-16">
             {['Global Director of Marketing, Branding and Events — Content creator, marketing analyst, and audience engagement', 'Chief Officer of Strategy Alliance', 'Financial Guidance Advisor', 'Chief of Technology and Information'].map((p) => (
               <li key={p} className="flex gap-4 items-start p-4 rounded-xl bg-gradient-to-r from-[var(--combo-northern-white)] to-[var(--combo-northern-white)]/95 border-2 border-[var(--accent-gray-medium)] hover:border-[var(--combo-northern-forest)]/40 hover:shadow-md transition-all group">
                 <span className="flex-shrink-0 mt-1.5 size-2.5 rounded-full bg-[var(--combo-northern-forest)] ring-4 ring-[var(--combo-northern-forest)]/20 group-hover:ring-[var(--combo-northern-neon)]/30 group-hover:bg-[var(--combo-northern-neon)]" />
-                <span className="text-slate-600 leading-relaxed">{p}</span>
+                <span className="text-[var(--text-secondary)] leading-relaxed">{p}</span>
               </li>
             ))}
           </ul>
-          <h2 className="font-display text-4xl md:text-5xl text-slate-900 uppercase tracking-tight mb-12">
+          <h2 className="font-display text-4xl md:text-5xl text-[var(--text-primary)] uppercase tracking-tight mb-12">
             Sports Wing
           </h2>
           <ul className="space-y-4">
             {['Division Lead of Athlete Support and Performance — Monitors athlete\'s performance to ensure they stay at peak performance mentally and physically; Injury prevention and recovery; Off-season care', 'Head of Legal and Professional Services - Basketball — Negotiating and reviewing athlete contracts; Collective Bargaining Agreements, Salary Caps, Analytics', 'Financial Guidance Advisor — Work closely with athlete\'s and their finance/investments', 'NIL Procurement Specialist – male athletes — Securing NIL deals for student athletes; Maximizing athletes marketing potential', 'NIL Procurement Specialist – female athletes — Securing NIL deals for student athletes; Maximizing athletes marketing potential', 'Athlete Profile Building — Work with athlete\'s media platforms; Handles PR work when required', 'Client Recruitement – Basketball', 'Client Recruitement - Soccer', 'TALENT PROCUREMENT – models/personalities/entertainers', 'Agent – Model', 'Agent – Personality', 'Agent – Entertainment (DJ)'].map((p) => (
               <li key={p} className="flex gap-4 items-start p-4 rounded-xl bg-gradient-to-r from-[var(--combo-northern-white)] to-[var(--combo-northern-white)]/95 border-2 border-[var(--accent-gray-medium)] hover:border-[var(--combo-northern-forest)]/40 hover:shadow-md transition-all group">
                 <span className="flex-shrink-0 mt-1.5 size-2.5 rounded-full bg-[var(--combo-northern-forest)] ring-4 ring-[var(--combo-northern-forest)]/20 group-hover:ring-[var(--combo-northern-neon)]/30 group-hover:bg-[var(--combo-northern-neon)]" />
-                <span className="text-slate-600 leading-relaxed">{p}</span>
+                <span className="text-[var(--text-secondary)] leading-relaxed">{p}</span>
               </li>
             ))}
           </ul>
@@ -172,14 +172,14 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-32 flex items-center justify-center bg-slate-900 overflow-hidden">
+      <section className="relative py-32 flex items-center justify-center bg-[var(--combo-northern-black)] overflow-hidden">
         <div className="absolute inset-0 cta-slideshow-container">
           <div className="absolute inset-0 bg-[url('/hero-3panel.png')] bg-cover bg-center cta-slide cta-slide-1" />
           <div className="absolute inset-0 bg-[url('/hero-3panel.png')] bg-cover bg-center cta-slide cta-slide-2" />
           <div className="absolute inset-0 bg-[url('/hero-3panel.png')] bg-cover bg-center cta-slide cta-slide-3" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--combo-northern-black)]/60 via-[var(--combo-northern-forest)]/30 to-[var(--combo-northern-black)]/70" />
-        <h2 className="relative z-10 font-display text-4xl md:text-6xl text-white uppercase text-center leading-tight px-6">
+        <h2 className="relative z-10 font-display text-4xl md:text-6xl text-[var(--combo-northern-white)] uppercase text-center leading-tight px-6">
           Outwork Your Greatest<br />Competition...You!
         </h2>
       </section>

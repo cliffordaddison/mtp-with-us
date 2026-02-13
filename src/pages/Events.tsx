@@ -36,12 +36,12 @@ const events = [
 export default function Events() {
   return (
     <Layout>
-      <section className="bg-white pt-20 pb-16 border-b border-slate-200">
+      <section className="bg-[var(--surface)] pt-20 pb-16 border-b border-[var(--border-muted)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="font-display text-5xl md:text-7xl text-slate-900 uppercase tracking-tight leading-tight">
+          <h1 className="font-display text-5xl md:text-7xl text-[var(--text-primary)] uppercase tracking-tight leading-tight">
             Upcoming <span className="text-[var(--accent)]">Season</span> Schedule
           </h1>
-          <p className="mt-6 text-slate-600 max-w-2xl mx-auto text-lg">
+          <p className="mt-6 text-[var(--text-secondary)] max-w-2xl mx-auto text-lg">
             Exclusive showcases and trials across Canada and the USA. Join MTP for the 2026 season.
           </p>
         </div>
@@ -57,11 +57,11 @@ export default function Events() {
                   <span className="text-sm font-bold uppercase tracking-widest">{event.date}</span>
                 </div>
               </div>
-              <div className="md:col-span-3 pb-12 border-b border-slate-200 last:border-0">
-                <h3 className="font-display text-2xl md:text-3xl text-slate-900 uppercase group-hover:text-[var(--accent)] transition-colors">
+              <div className="md:col-span-3 pb-12 border-b border-[var(--border-muted)] last:border-0">
+                <h3 className="font-display text-2xl md:text-3xl text-[var(--text-primary)] uppercase group-hover:text-[var(--accent)] transition-colors">
                   {event.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed mt-4 max-w-2xl">
+                <p className="text-[var(--text-secondary)] leading-relaxed mt-4 max-w-2xl">
                   {event.description}
                 </p>
                 <div className="mt-6 flex flex-wrap gap-4">
@@ -75,7 +75,7 @@ export default function Events() {
                       Register Now
                     </a>
                   ) : (
-                    <span className="px-6 h-10 flex items-center bg-slate-100 text-slate-400 text-xs font-bold uppercase tracking-widest rounded-lg">
+                    <span className="px-6 h-10 flex items-center bg-[var(--surface-alt)] text-[var(--text-secondary)] text-xs font-bold uppercase tracking-widest rounded-lg">
                       Coming Soon
                     </span>
                   )}
