@@ -4,15 +4,15 @@ import { Layout, FooterContent } from '../components/Layout'
 
 export default function Register() {
   const [submitted, setSubmitted] = useState(false)
-  const [roles, setRoles] = useState<string[]>([])
+  const [role, setRole] = useState<string>('')
   const [socialPlatforms, setSocialPlatforms] = useState<string[]>([])
   const [socialUrls, setSocialUrls] = useState<{ [key: string]: string }>({})
   const [socialErrors, setSocialErrors] = useState<{ [key: string]: string }>({})
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Validate at least one role is selected
-    if (roles.length === 0) {
+    // Validate that a role is selected
+    if (!role) {
       return
     }
     // Validate social media URLs if platforms are selected
@@ -56,8 +56,11 @@ export default function Register() {
     return String.raw`.*(twitter\.com/|x\.com/).*`
   }
 
-  const handleRoleChange = (role: string) => {
-    setRoles((prev) => (prev.includes(role) ? prev.filter((r) => r !== role) : [...prev, role]))
+  const handleRoleChange = (selectedRole: string) => {
+    // #region agent log
+    fetch('http://127.0.0.1:7247/ingest/a9a9a528-c2ff-4b90-84ac-bee7c31ad469',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Register.tsx:59',message:'Role change triggered',data:{selectedRole,currentRole:role},timestamp:Date.now(),runId:'debug',hypothesisId:'B'})}).catch(()=>{});
+    // #endregion
+    setRole(selectedRole)
   }
 
   const handleSocialPlatformChange = (platform: string) => {
@@ -95,8 +98,8 @@ export default function Register() {
     <Layout>
       <div className="flex-grow flex flex-col md:flex-row min-h-[calc(100vh-64px)]">
         {/* Hero Background Panel */}
-        <div className="hidden md:flex md:w-2/5 lg:w-2/5 relative bg-slate-900 items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/connection-talent.png')] bg-cover bg-center opacity-50" />
+        <div className="hidden md:flex md:w-2/5 lg:w-2/5 relative bg-slate-900 items-center justify-center overflow-hidden md:h-[calc(100vh-64px)]">
+          <div className="absolute inset-0 bg-[url('/connection-talent.png')] bg-cover bg-center opacity-50" style={{backgroundSize:'cover',backgroundPosition:'center',transform:'none',transition:'none'}} />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 via-slate-900/60 to-slate-900/50" />
           <div className="relative z-10 max-w-md px-12 text-center md:text-left">
             <h2 className="font-display text-4xl lg:text-5xl text-white uppercase tracking-tight leading-tight mb-6">
@@ -110,7 +113,7 @@ export default function Register() {
         </div>
 
         {/* Form Panel */}
-        <div className="w-full md:w-3/5 lg:w-3/5 bg-white flex items-center justify-center p-8 lg:p-16">
+        <div className="w-full md:w-3/5 lg:w-3/5 bg-white flex items-start justify-center p-8 lg:p-16 overflow-y-auto md:h-[calc(100vh-64px)]">
           <div className="w-full max-w-md">
             {submitted ? (
               <div className="text-center space-y-6">
@@ -189,23 +192,22 @@ export default function Register() {
                     <div className="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
                       I am a:
                     </div>
-                    <div className="space-y-3">
-                      {['Athlete', 'Model', 'Entertainer'].map((role) => (
-                        <label key={role} htmlFor={`role-${role.toLowerCase()}`} className="flex items-center gap-3 cursor-pointer">
+                    <div className="flex items-start gap-8">
+                      {['Athlete', 'Model', 'Entertainer'].map((roleOption) => (
+                        <label key={roleOption} htmlFor={`role-${roleOption.toLowerCase()}`} className="flex flex-col items-center gap-2 cursor-pointer">
                           <input
-                            id={`role-${role.toLowerCase()}`}
-                            type="checkbox"
-                            checked={roles.includes(role.toLowerCase())}
-                            onChange={() => handleRoleChange(role.toLowerCase())}
-                            className="size-5 rounded border-2 border-slate-300 text-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2"
+                            id={`role-${roleOption.toLowerCase()}`}
+                            name="role"
+                            type="radio"
+                            value={roleOption.toLowerCase()}
+                            checked={role === roleOption.toLowerCase()}
+                            onChange={() => handleRoleChange(roleOption.toLowerCase())}
+                            className="size-5 border-2 border-slate-300 text-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2"
                           />
-                          <span className="text-slate-700 font-medium">{role}</span>
+                          <span className="text-slate-700 font-medium text-sm text-center">{roleOption}</span>
                         </label>
                       ))}
                     </div>
-                    {roles.length === 0 && (
-                      <p className="mt-2 text-xs text-red-500">Please select at least one role</p>
-                    )}
                   </div>
                   <div>
                     <div className="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
@@ -215,7 +217,7 @@ export default function Register() {
                       {[
                         { key: 'instagram', label: 'Instagram', placeholder: 'https://instagram.com/yourusername' },
                         { key: 'linkedin', label: 'LinkedIn', placeholder: 'https://linkedin.com/in/yourusername' },
-                        { key: 'x', label: 'X (Twitter)', placeholder: 'https://twitter.com/yourusername or https://x.com/yourusername' },
+                        { key: 'x', label: 'X.com', placeholder: 'https://x.com/yourusername' },
                       ].map((platform) => (
                         <div key={platform.key}>
                           <label className="flex items-center gap-3 cursor-pointer mb-2">
