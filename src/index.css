@@ -2,10 +2,67 @@
 
 :root {
   --primary: #0f172a;
-  --accent: #1e40af;
-  --accent-hover: #1e3a8a;
+  
+  /* ============================================
+     BRIGHT NORTHERN LIGHTS - PRIMARY SYSTEM
+     (First Choice: Neon/Lime/Forest/Spearmint + White/Black)
+     ============================================ */
+  --combo-northern-neon: #31ED31;      /* All Glammed Up Neon Green - High impact CTAs */
+  --combo-northern-lime: #BFFF00;      /* Bright lime for energy and highlights */
+  --combo-northern-forest: #228B22;    /* Forest green - primary accent, professional */
+  --combo-northern-spearmint: #16F4D0; /* Cool spearmint for accents and variety */
+  --combo-northern-white: #FFFFFF;      /* White for toning and contrast */
+  --combo-northern-black: #000000;      /* Black for toning and depth */
+  
+  /* Primary accent system (using Bright Northern Lights) */
+  --accent: var(--combo-northern-forest);           /* Main accent: Forest green */
+  --accent-hover: #1a6b1a;                          /* Darker forest for hover */
+  --accent-light: #2da32d;                          /* Lighter forest variant */
+  --accent-bright: var(--combo-northern-neon);     /* Neon for high-impact */
+  --accent-lime: var(--combo-northern-lime);       /* Lime for energy */
+  --accent-spearmint: var(--combo-northern-spearmint); /* Spearmint for cool accents */
+  --accent-white: var(--combo-northern-white);      /* White for toning */
+  --accent-black: var(--combo-northern-black);      /* Black for toning */
+  
+  /* Toning and utility */
+  --accent-gray-light: #f8f9fa;
+  --accent-gray-medium: #e9ecef;
   --muted: #64748b;
   --border: #e2e8f0;
+  --border-accent: rgba(34, 139, 34, 0.2);
+
+  /* ============================================
+     INDIVIDUAL NEON GREENS
+     ============================================ */
+  --neon-green-glammed: #31ED31;    /* All Glammed Up - Brightest neon */
+  --neon-green-ripe: #7CF47C;       /* Almost Ripe - Softer neon */
+  --neon-green-beetle: #A1F7A1;     /* A Real Beetle - Lightest neon */
+  --kelly-green-dessert: #40A332;   /* Backyard Dessert Kelly - Rich green */
+
+  /* ============================================
+     COLOR COMBO: BLENDING IN
+     (Neon/Forest/Sage/Black)
+     ============================================ */
+  --combo-blending-neon: #31ED31;
+  --combo-blending-forest: #228B22;
+  --combo-blending-sage: #9DC183;    /* Sage green for soft backgrounds */
+  --combo-blending-black: #000000;
+
+  /* ============================================
+     COLOR COMBO: BLUSH OF TREES
+     (Neon/Kelly/Seafoam/Coral)
+     ============================================ */
+  --combo-blush-neon: #31ED31;
+  --combo-blush-kelly: #40A332;
+  --combo-blush-seafoam: #93E9BE;    /* Soft seafoam for backgrounds */
+  --combo-blush-coral: #FF7F50;      /* Coral accent for warmth */
+
+  /* ============================================
+     COLOR COMBO: WITH THE WIND
+     ============================================ */
+  --combo-wind-primary: #7CF47C;     /* Almost Ripe Neon */
+  --combo-wind-secondary: #A1F7A1;   /* A Real Beetle Neon */
+  --combo-wind-accent: #40A332;      /* Kelly Green */
 }
 
 * {
@@ -23,4 +80,48 @@ body {
 
 .font-display {
   font-family: 'Bebas Neue', sans-serif;
+}
+
+/* CTA Slideshow Animation */
+.cta-slideshow-container {
+  opacity: 0.3;
+}
+
+.cta-slide {
+  animation: slideshow-fade-zoom 12s infinite;
+  opacity: 0;
+}
+
+.cta-slide-1 {
+  animation-delay: 0s;
+}
+
+.cta-slide-2 {
+  animation-delay: 4s;
+}
+
+.cta-slide-3 {
+  animation-delay: 8s;
+}
+
+@keyframes slideshow-fade-zoom {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  5% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  35% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
 }

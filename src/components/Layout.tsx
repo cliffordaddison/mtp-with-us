@@ -33,13 +33,13 @@ export function Layout({ children }: LayoutProps) {
             <Logo className="size-8 sm:size-9 transition-transform group-hover:scale-105 shrink-0" />
             <div className="flex flex-col min-w-0">
               <span className="font-display text-base sm:text-xl tracking-tight text-slate-900 leading-tight">MTPWITHUS</span>
-              <span className="font-display text-[10px] sm:text-xs tracking-wide text-[var(--accent)] uppercase leading-tight">Maximize the Potential (MTP)</span>
+              <span className="font-display text-[10px] sm:text-xs tracking-wide text-[var(--combo-northern-forest)] uppercase leading-tight border-l-2 border-[var(--combo-northern-neon)]/40 pl-2 ml-2">Maximize the Potential (MTP)</span>
             </div>
           </Link>
           <nav className="hidden md:flex items-center gap-8 shrink-0">
             <Link to="/#who-we-are" className={navLinkClass(activeSection === 'who-we-are')}>About</Link>
             <Link to="/#services" className={navLinkClass(activeSection === 'services')}>Services</Link>
-            <Link to="/#team" className={navLinkClass(activeSection === 'team')}>Squad</Link>
+            <Link to="/#team" className={navLinkClass(activeSection === 'team')}>Team</Link>
             <Link to="/#careers" className={navLinkClass(activeSection === 'careers')}>Careers</Link>
             <Link to="/#contact" className={navLinkClass(activeSection === 'contact')}>Contact</Link>
             <Link to="/events" className={navLinkClass(activeSection === 'events')}>Events</Link>
@@ -61,11 +61,11 @@ export function Layout({ children }: LayoutProps) {
               to="/register"
               className={`flex items-center justify-center rounded-lg h-9 sm:h-10 px-3 sm:px-5 text-xs sm:text-sm font-bold transition-all shrink-0 ${
                 activeSection === 'register'
-                  ? 'bg-[var(--accent)] text-white ring-2 ring-[var(--accent)] ring-offset-2'
+                  ? 'bg-gradient-to-r from-[var(--combo-northern-forest)] via-[var(--combo-northern-neon)] to-[var(--combo-northern-forest)] hover:from-[var(--combo-northern-neon)] hover:via-[var(--combo-northern-lime)] hover:to-[var(--combo-northern-neon)] text-[var(--combo-northern-white)] ring-2 ring-[var(--combo-northern-neon)]/40 ring-offset-2 shadow-md shadow-[var(--combo-northern-neon)]/25'
                   : 'bg-[var(--primary)] text-white hover:bg-slate-800'
               }`}
             >
-              Get Started
+              Register to be contacted
             </Link>
           </div>
         </div>
@@ -73,7 +73,7 @@ export function Layout({ children }: LayoutProps) {
           <nav className="md:hidden border-t border-slate-200 bg-white shadow-lg">
             <Link to="/#who-we-are" className={mobileNavLinkClass(activeSection === 'who-we-are')} onClick={closeMobileMenu}>About</Link>
             <Link to="/#services" className={mobileNavLinkClass(activeSection === 'services')} onClick={closeMobileMenu}>Services</Link>
-            <Link to="/#team" className={mobileNavLinkClass(activeSection === 'team')} onClick={closeMobileMenu}>Squad</Link>
+            <Link to="/#team" className={mobileNavLinkClass(activeSection === 'team')} onClick={closeMobileMenu}>Team</Link>
             <Link to="/#careers" className={mobileNavLinkClass(activeSection === 'careers')} onClick={closeMobileMenu}>Careers</Link>
             <Link to="/events" className={mobileNavLinkClass(activeSection === 'events')} onClick={closeMobileMenu}>Events</Link>
             <Link to="/#contact" className={mobileNavLinkClass(activeSection === 'contact')} onClick={closeMobileMenu}>Contact</Link>
@@ -107,10 +107,10 @@ function FooterContent() {
               <a href="tel:+16472619687" className="block text-slate-400 hover:text-white transition-colors">1(647)261-9687</a>
             </div> */}
             <div className="flex gap-3">
-              <a href="https://instagram.com/mtpwithus" target="_blank" rel="noopener noreferrer" className="size-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--accent)] transition-colors" aria-label="Instagram">
+              <a href="https://instagram.com/mtpwithus" target="_blank" rel="noopener noreferrer" className="size-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--accent)] hover:scale-110 transition-all border border-white/20 hover:border-[var(--accent)]/50" aria-label="Instagram">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
               </a>
-              <a href="https://twitter.com/mtpwithus" target="_blank" rel="noopener noreferrer" className="size-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--accent)] transition-colors" aria-label="Twitter">
+              <a href="https://twitter.com/mtpwithus" target="_blank" rel="noopener noreferrer" className="size-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--accent)] hover:scale-110 transition-all border border-white/20 hover:border-[var(--accent)]/50" aria-label="Twitter">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               </a>
             </div>
@@ -136,7 +136,7 @@ function FooterContent() {
             <p className="text-sm text-slate-400 mb-4">Latest insights and athlete updates.</p>
             <form className="flex flex-col gap-2">
               <input type="email" placeholder="Your email" className="bg-white/5 border border-white/10 rounded-lg h-10 px-3 text-sm text-white placeholder:text-slate-500 focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent outline-none" />
-              <button type="submit" className="bg-[var(--accent)] hover:bg-[var(--accent-hover)] rounded-lg h-10 text-sm font-bold uppercase tracking-wider transition-colors">Subscribe</button>
+              <button type="submit" className="bg-gradient-to-r from-[var(--combo-northern-forest)] to-[var(--combo-northern-neon)] hover:from-[var(--combo-northern-neon)] hover:to-[var(--combo-northern-lime)] rounded-lg h-10 text-sm font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg shadow-[var(--combo-northern-neon)]/25">Subscribe</button>
             </form>
           </div>
         </div>
