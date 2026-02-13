@@ -98,12 +98,12 @@ export default function Register() {
         <div className="hidden md:flex md:w-2/5 lg:w-2/5 relative bg-slate-900 items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-[url('/connection-talent.png')] bg-cover bg-center opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 via-slate-900/60 to-slate-900/50" />
-          <div className="relative z-10 max-w-md px-12 text-center md:text-left" style={{ isolation: 'isolate' }}>
-            <h2 className="font-display text-4xl lg:text-5xl text-white uppercase tracking-tight leading-tight mb-6" style={{ textShadow: 'none', willChange: 'auto', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
+          <div className="relative z-10 max-w-md px-12 text-center md:text-left">
+            <h2 className="font-display text-4xl lg:text-5xl text-white uppercase tracking-tight leading-tight mb-6">
               Your <span className="text-[var(--accent)]">Journey</span> Starts Here
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[var(--combo-northern-neon)] via-[var(--combo-northern-lime)] via-[var(--combo-northern-spearmint)] to-[var(--combo-northern-neon)] mb-6 mx-auto md:mx-0 shadow-sm shadow-[var(--combo-northern-neon)]/40" />
-            <p className="text-slate-300 text-lg leading-relaxed" style={{ textShadow: 'none', willChange: 'auto', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
+            <p className="text-slate-300 text-lg leading-relaxed">
               Join MTP Talent Group and connect with elite agents, fellow athletes, and industry leaders across Canada and the USA.
             </p>
           </div>
