@@ -5,7 +5,7 @@ interface LogoProps {
 export function Logo({ className = '' }: LogoProps) {
   return (
     <img
-      src="/logo.png"
+      src="/logo-white.png"
       alt="Maximize the Potential Logo"
       className={`object-contain ${className}`}
     />

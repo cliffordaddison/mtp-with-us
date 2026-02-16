@@ -1,74 +1,88 @@
 @import "tailwindcss";
 
 :root {
-  /* Base surfaces and text from owner palette (Bright Northern Lights) */
-  --primary: var(--combo-northern-forest);
-  --surface: var(--combo-northern-white);
-  --surface-alt: #f8faf8;
-  --text-primary: var(--combo-northern-black);
-  --text-secondary: #374151;
-  --border-muted: rgba(34, 139, 34, 0.15);
+  /* ============================================
+     BRIGHT NORTHERN LIGHTS - GLOBAL FOUNDATION
+     ============================================ */
+  /* Base Background: Solid Black */
+  --base-bg: #000000;
+  
+  /* Surface/Card Background: Deep Charcoal */
+  --surface-card: #0b0b0b;
+  --surface-card-border: #1a1a1a;
+  
+  /* Primary Accent: All Glammed Up Neon Green */
+  --neon-green: #31ED31;
+  
+  /* Secondary Accent: Spearmint/Seafoam */
+  --spearmint: #A1F7A1;
+  
+  /* Text Colors */
+  --text-primary: #FFFFFF;      /* Pure White for maximum readability */
+  --text-secondary: #CCCCCC;    /* Light Grey to avoid harsh contrast */
+  
+  /* Kelly Green (Forest Green) */
+  --kelly-green: #40A332;
+  
+  /* Almost Ripe Neon Green */
+  --neon-green-ripe: #7CF47C;
+  
+  /* Global Border Radius */
+  --radius: 8px;
   
   /* ============================================
-     BRIGHT NORTHERN LIGHTS - PRIMARY SYSTEM
-     (First Choice: Neon/Lime/Forest/Spearmint + White/Black)
+     LEGACY VARIABLES (for backward compatibility)
      ============================================ */
-  --combo-northern-neon: #31ED31;      /* All Glammed Up Neon Green - High impact CTAs */
-  --combo-northern-lime: #BFFF00;      /* Bright lime for energy and highlights */
-  --combo-northern-forest: #228B22;    /* Forest green - primary accent, professional */
-  --combo-northern-spearmint: #16F4D0; /* Cool spearmint for accents and variety */
-  --combo-northern-white: #FFFFFF;      /* White for toning and contrast */
-  --combo-northern-black: #000000;      /* Black for toning and depth */
+  --primary: var(--neon-green);
+  --surface: var(--surface-card);
+  --surface-alt: var(--surface-card);
+  --text-primary-legacy: var(--text-primary);
+  --text-secondary-legacy: var(--text-secondary);
+  --border-muted: rgba(64, 163, 50, 0.15);
   
-  /* Primary accent system (using Bright Northern Lights) */
-  --accent: var(--combo-northern-forest);           /* Main accent: Forest green */
-  --accent-hover: #1a6b1a;                          /* Darker forest for hover */
-  --accent-light: #2da32d;                          /* Lighter forest variant */
-  --accent-bright: var(--combo-northern-neon);     /* Neon for high-impact */
-  --accent-lime: var(--combo-northern-lime);       /* Lime for energy */
-  --accent-spearmint: var(--combo-northern-spearmint); /* Spearmint for cool accents */
-  --accent-white: var(--combo-northern-white);      /* White for toning */
-  --accent-black: var(--combo-northern-black);      /* Black for toning */
+  /* Bright Northern Lights System */
+  --combo-northern-neon: var(--neon-green);
+  --combo-northern-lime: #BFFF00;
+  --combo-northern-forest: #228B22;
+  --combo-northern-spearmint: var(--spearmint);
+  --combo-northern-white: var(--text-primary);
+  --combo-northern-black: var(--base-bg);
+  
+  /* Primary accent system */
+  --accent: var(--neon-green);
+  --accent-hover: var(--neon-green-ripe);
+  --accent-light: var(--spearmint);
+  --accent-bright: var(--neon-green);
+  --accent-lime: #BFFF00;
+  --accent-spearmint: var(--spearmint);
+  --accent-white: var(--text-primary);
+  --accent-black: var(--base-bg);
   
   /* Toning and utility */
   --accent-gray-light: #f8f9fa;
   --accent-gray-medium: #e9ecef;
   --muted: #64748b;
-  --border: #e2e8f0;
-  --border-accent: rgba(34, 139, 34, 0.2);
+  --border: #1a1a1a;
+  --border-accent: rgba(49, 237, 49, 0.2);
 
-  /* ============================================
-     INDIVIDUAL NEON GREENS
-     ============================================ */
-  --neon-green-glammed: #31ED31;    /* All Glammed Up - Brightest neon */
-  --neon-green-ripe: #7CF47C;       /* Almost Ripe - Softer neon */
-  --neon-green-beetle: #A1F7A1;     /* A Real Beetle - Lightest neon */
-  --kelly-green-dessert: #40A332;   /* Backyard Dessert Kelly - Rich green */
+  /* Individual Neon Greens */
+  --neon-green-glammed: var(--neon-green);
+  --neon-green-ripe: var(--neon-green-ripe);
+  --neon-green-beetle: var(--spearmint);
+  --kelly-green-dessert: var(--kelly-green);
 
-  /* ============================================
-     COLOR COMBO: BLENDING IN
-     (Neon/Forest/Sage/Black)
-     ============================================ */
-  --combo-blending-neon: #31ED31;
+  /* Color Combos */
+  --combo-blending-neon: var(--neon-green);
   --combo-blending-forest: #228B22;
-  --combo-blending-sage: #9DC183;    /* Sage green for soft backgrounds */
-  --combo-blending-black: #000000;
-
-  /* ============================================
-     COLOR COMBO: BLUSH OF TREES
-     (Neon/Kelly/Seafoam/Coral)
-     ============================================ */
-  --combo-blush-neon: #31ED31;
-  --combo-blush-kelly: #40A332;
-  --combo-blush-seafoam: #93E9BE;    /* Soft seafoam for backgrounds */
-  --combo-blush-coral: #FF7F50;      /* Coral accent for warmth */
-
-  /* ============================================
-     COLOR COMBO: WITH THE WIND
-     ============================================ */
-  --combo-wind-primary: #7CF47C;     /* Almost Ripe Neon */
-  --combo-wind-secondary: #A1F7A1;   /* A Real Beetle Neon */
-  --combo-wind-accent: #40A332;      /* Kelly Green */
+  --combo-blending-sage: #9DC183;
+  --combo-blending-black: var(--base-bg);
+  --combo-blush-neon: var(--neon-green);
+  --combo-blush-kelly: var(--kelly-green);
+  --combo-blush-seafoam: #93E9BE;
+  --combo-blush-coral: #FF7F50;
+  --combo-wind-primary: var(--neon-green-ripe);
+  --combo-wind-secondary: var(--spearmint);
+  --combo-wind-accent: var(--kelly-green);
 }
 
 * {
@@ -77,6 +91,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--base-bg);
 }
 
 body {
@@ -84,6 +99,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  background-color: var(--base-bg);
+  color: var(--text-primary);
 }
 
 .font-display {
@@ -102,7 +119,7 @@ body {
 
 /* CTA Slideshow Animation */
 .cta-slideshow-container {
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 .cta-slide {
@@ -141,5 +158,168 @@ body {
   100% {
     opacity: 0;
     transform: scale(1);
+  }
+}
+
+/* ============================================
+   BRIGHT NORTHERN LIGHTS - COMPONENT STYLES
+   ============================================ */
+
+/* Service Cards (RH7 Style) */
+.service-card {
+  background: rgba(11, 11, 11, 0.60);
+  border: 1px solid var(--surface-card-border);
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--neon-green);
+  transform: translateY(-4px);
+  box-shadow: 0 0 12px rgba(49, 237, 49, 0.5);
+}
+
+.service-card-icon {
+  filter: drop-shadow(0 0 5px var(--neon-green));
+  color: var(--neon-green);
+}
+
+/* Team Headshots (TimeToRefresh Style) */
+.team-headshot {
+  border-radius: 50%;
+  border: 3px solid;
+  border-image: linear-gradient(135deg, var(--neon-green), var(--kelly-green)) 1;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+/* Form Inputs */
+.form-input {
+  background: rgba(21, 21, 21, 0.70);
+  border: 1px solid var(--kelly-green);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+}
+
+.form-input:focus {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 5px var(--neon-green);
+  outline: none;
+}
+
+/* Schedule Rows */
+.schedule-row:nth-child(even) {
+  background: rgba(64, 163, 50, 0.05);
+}
+
+/* Newsletter Input */
+.newsletter-input {
+  background: rgba(17, 17, 17, 0.70);
+  border: 1px solid #333333;
+  color: var(--text-primary);
+}
+
+/* Subscribe Button Flash Animation */
+@keyframes subscribe-flash {
+  0%, 100% {
+    background-color: var(--neon-green);
+  }
+  50% {
+    background-color: var(--spearmint);
+  }
+}
+
+.subscribe-button:active {
+  animation: subscribe-flash 0.3s ease;
+}
+
+/* Social Icons Hover */
+.social-icon {
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--neon-green);
+  transform: translateY(-2px);
+}
+
+/* Logo Zoom Animation */
+@keyframes logo-zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+
+.logo-zoom-animation {
+  animation: logo-zoom 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Logo Background Component Styles - Applied via React component */
+.logo-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/logo-white.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.50;
+  pointer-events: none;
+  z-index: 0;
+  filter: brightness(0.25);
+  mix-blend-mode: normal;
+  transition: opacity 0.5s ease;
+}
+
+/* Responsive sizing and opacity for logo background */
+@media (max-width: 768px) {
+  .logo-background {
+    background-size: 100%;
+    opacity: 0.45;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo-background {
+    background-size: 95%;
+    opacity: 0.48;
+  }
+}
+
+@media (min-width: 1025px) {
+  .logo-background {
+    background-size: 90%;
+    opacity: 0.50;
+  }
+}
+
+/* Scrolled state - slightly increase opacity */
+.logo-background.scrolled {
+  opacity: 0.58;
+}
+
+@media (max-width: 768px) {
+  .logo-background.scrolled {
+    opacity: 0.53;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo-background.scrolled {
+    opacity: 0.56;
   }
 }

@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Logo } from './Logo'
+import { LogoBackground } from './LogoBackground'
 import { useActiveSection } from '../hooks/useActiveSection'
 
 interface LayoutProps {
@@ -8,32 +9,57 @@ interface LayoutProps {
 }
 
 const navLinkClass = (isActive: boolean) =>
-  `text-sm font-semibold transition-colors shrink-0 relative pb-0.5 ${
+  `text-sm font-medium transition-all shrink-0 relative pb-0.5 ${
     isActive
-      ? 'text-[var(--accent)] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent)] after:rounded-full'
-      : 'text-[var(--text-secondary)] hover:text-[var(--accent)]'
+      ? 'text-[var(--neon-green)] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--neon-green)] after:rounded-full'
+      : 'text-[var(--text-primary)] hover:text-[var(--neon-green)] hover:drop-shadow-[0_0_8px_rgba(49,237,49,0.5)]'
   }`
 
 const mobileNavLinkClass = (isActive: boolean) =>
-  `block py-3 px-4 font-semibold transition-colors border-b border-[var(--border-muted)] last:border-0 ${
-    isActive ? 'text-[var(--accent)] bg-[var(--accent)]/5' : 'text-[var(--text-secondary)] hover:text-[var(--accent)] hover:bg-[var(--surface-alt)]'
+  `block py-3 px-4 font-medium transition-colors border-b border-[var(--kelly-green)]/20 last:border-0 ${
+    isActive ? 'text-[var(--neon-green)] bg-[var(--neon-green)]/10' : 'text-[var(--text-primary)] hover:text-[var(--neon-green)] hover:bg-[var(--surface-card)]'
   }`
 
 export function Layout({ children }: LayoutProps) {
   const activeSection = useActiveSection()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 50
+      setIsScrolled(scrolled)
+      // Add/remove scrolled class to body for background effect
+      if (scrolled) {
+        document.body.classList.add('scrolled')
+      } else {
+        document.body.classList.remove('scrolled')
+      }
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const closeMobileMenu = () => setMobileMenuOpen(false)
 
   return (
-    <div className="min-h-screen bg-[var(--surface-alt)]">
-      <header className="sticky top-0 z-50 w-full border-b border-[var(--border-muted)] bg-[var(--surface)]/95 backdrop-blur-md">
+    <div className="min-h-screen relative">
+      <LogoBackground />
+      <header 
+        className={`sticky top-0 z-50 w-full transition-all duration-300 relative ${
+          isScrolled 
+            ? 'bg-[#000000e6] border-b border-[var(--kelly-green)]' 
+            : 'bg-[#000000]/95 border-b border-transparent'
+        }`}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-16 py-2 sm:py-0 flex items-center justify-between gap-3">
           <Link to="/" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0" onClick={closeMobileMenu}>
             <Logo className="size-8 sm:size-9 transition-transform group-hover:scale-105 shrink-0" />
             <div className="flex flex-col min-w-0">
-              <span className="font-display text-base sm:text-xl tracking-tight text-[var(--text-primary)] leading-tight">MTPWITHUS</span>
-              <span className="font-display text-[10px] sm:text-xs tracking-wide text-[var(--combo-northern-forest)] uppercase leading-tight border-l-2 border-[var(--combo-northern-neon)]/40 pl-2 ml-2">Maximize the Potential (MTP)</span>
+              <span className="font-display text-base sm:text-xl tracking-tight text-[var(--text-primary)] leading-tight">
+                MTP<span className="text-[var(--neon-green)]">WITHUS</span>
+              </span>
+              <span className="font-display text-[10px] sm:text-xs tracking-wide text-[var(--text-primary)]/70 uppercase leading-tight border-l-2 border-[var(--neon-green)]/40 pl-2 ml-2">Maximize the Potential (MTP)</span>
             </div>
           </Link>
           <nav className="hidden md:flex items-center gap-8 shrink-0">
@@ -134,18 +160,14 @@ export function Layout({ children }: LayoutProps) {
             </button>
             <Link
               to="/register"
-              className={`flex items-center justify-center rounded-lg h-9 sm:h-10 px-3 sm:px-5 text-xs sm:text-sm font-bold transition-all shrink-0 ${
-                activeSection === 'register'
-                  ? 'bg-gradient-to-r from-[var(--combo-northern-forest)] via-[var(--combo-northern-neon)] to-[var(--combo-northern-forest)] hover:from-[var(--combo-northern-neon)] hover:via-[var(--combo-northern-lime)] hover:to-[var(--combo-northern-neon)] text-[var(--combo-northern-white)] ring-2 ring-[var(--combo-northern-neon)]/40 ring-offset-2 shadow-md shadow-[var(--combo-northern-neon)]/25'
-                  : 'bg-gradient-to-r from-[var(--combo-northern-forest)] via-[var(--combo-northern-neon)] to-[var(--combo-northern-forest)] hover:from-[var(--combo-northern-neon)] hover:via-[var(--combo-northern-lime)] hover:to-[var(--combo-northern-neon)] text-[var(--combo-northern-white)] hover:opacity-95'
-              }`}
+              className="flex items-center justify-center rounded-[var(--radius)] h-9 sm:h-10 px-3 sm:px-5 text-xs sm:text-sm font-bold uppercase transition-all shrink-0 bg-[var(--neon-green)] text-[var(--base-bg)] hover:bg-[var(--base-bg)] hover:text-[var(--neon-green)] hover:border-2 hover:border-[var(--neon-green)] hover:shadow-[0_0_20px_rgba(49,237,49,0.8)]"
             >
-              Register to be contacted
+              GET STARTED
             </Link>
           </div>
         </div>
         {mobileMenuOpen && (
-          <nav className="md:hidden border-t border-[var(--border-muted)] bg-[var(--surface)] shadow-lg">
+          <nav className={`md:hidden border-t ${isScrolled ? 'border-[var(--kelly-green)] bg-[#000000e6]' : 'border-transparent bg-transparent'} shadow-lg transition-all duration-300`}>
             <Link 
               to="/#who-we-are" 
               className={mobileNavLinkClass(activeSection === 'who-we-are')} 
@@ -235,14 +257,16 @@ export function Layout({ children }: LayoutProps) {
           </nav>
         )}
       </header>
-      {children}
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   )
 }
 
 function FooterContent() {
   return (
-    <footer id="contact" className="bg-[var(--combo-northern-black)] text-[var(--combo-northern-white)]">
+    <footer id="contact" className="relative z-10 bg-[var(--combo-northern-black)] text-[var(--combo-northern-white)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12">
           <div className="space-y-5">
@@ -262,10 +286,10 @@ function FooterContent() {
               <a href="tel:+16472619687" className="block text-[var(--combo-northern-white)]/80 hover:text-[var(--combo-northern-white)] transition-colors">1(647)261-9687</a>
             </div> */}
             <div className="flex gap-3">
-              <a href="https://instagram.com/mtpwithus" target="_blank" rel="noopener noreferrer" className="size-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--accent)] hover:scale-110 transition-all border border-white/20 hover:border-[var(--accent)]/50" aria-label="Instagram">
+              <a href="https://instagram.com/mtpwithus" target="_blank" rel="noopener noreferrer" className="social-icon size-9 rounded-full bg-white/10 flex items-center justify-center text-[var(--text-primary)] hover:text-[var(--neon-green)] hover:scale-110 transition-all border border-white/20 hover:border-[var(--neon-green)]/50" aria-label="Instagram">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
               </a>
-              <a href="https://twitter.com/mtpwithus" target="_blank" rel="noopener noreferrer" className="size-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--accent)] hover:scale-110 transition-all border border-white/20 hover:border-[var(--accent)]/50" aria-label="Twitter">
+              <a href="https://twitter.com/mtpwithus" target="_blank" rel="noopener noreferrer" className="social-icon size-9 rounded-full bg-white/10 flex items-center justify-center text-[var(--text-primary)] hover:text-[var(--neon-green)] hover:scale-110 transition-all border border-white/20 hover:border-[var(--neon-green)]/50" aria-label="Twitter">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               </a>
             </div>
@@ -290,12 +314,27 @@ function FooterContent() {
             <h5 className="text-xs font-bold uppercase tracking-widest text-[var(--combo-northern-white)]/70 mb-4">Newsletter</h5>
             <p className="text-sm text-[var(--combo-northern-white)]/80 mb-4">Latest insights and athlete updates.</p>
             <form className="flex flex-col gap-2">
-              <input type="email" placeholder="Your email" className="bg-[var(--combo-northern-white)]/5 border border-[var(--combo-northern-white)]/10 rounded-lg h-10 px-3 text-sm text-[var(--combo-northern-white)] placeholder:text-[var(--combo-northern-white)]/50 focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent outline-none" />
-              <button type="submit" className="bg-gradient-to-r from-[var(--combo-northern-forest)] to-[var(--combo-northern-neon)] hover:from-[var(--combo-northern-neon)] hover:to-[var(--combo-northern-lime)] rounded-lg h-10 text-sm font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg shadow-[var(--combo-northern-neon)]/25">Subscribe</button>
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                className="newsletter-input rounded-[var(--radius)] h-10 px-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-secondary)]/50 focus:ring-2 focus:ring-[var(--neon-green)] focus:border-[var(--neon-green)] outline-none transition-all" 
+              />
+              <button 
+                type="submit" 
+                className="subscribe-button bg-[var(--neon-green)] text-[var(--base-bg)] rounded-[var(--radius)] h-10 text-sm font-bold uppercase tracking-wider transition-all hover:shadow-[0_0_15px_rgba(49,237,49,0.6)]"
+              >
+                Subscribe
+              </button>
             </form>
           </div>
         </div>
-        <div className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[var(--combo-northern-white)]/60 text-xs">
+        <div className="mt-8 pt-8">
+          <h5 className="font-display text-sm font-bold uppercase tracking-widest text-[var(--neon-green)] mb-4">Land Acknowledgement</h5>
+          <p className="text-base text-[var(--combo-northern-white)]/90 leading-relaxed">
+            We acknowledge the land Women's Healthy Living Show is taking place on is the traditional territory of many nations including the Mississaugas of the Credit, the Anishnabeg, the Chippewa, the Haudenosaunee and the Wendat peoples and is now home to many diverse First Nations, Inuit and Métis peoples. We also acknowledge that Toronto is covered by Treaty 13 with the Mississaugas of the Credit.
+          </p>
+        </div>
+        <div className="mt-8 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[var(--combo-northern-white)]/60 text-xs">
           <p>© 2026 Maximize the Potential. All rights reserved.</p>
           <p className="font-display text-[var(--combo-northern-white)]/70">OUTWORK YOUR GREATEST COMPETITION...YOU!</p>
         </div>

@@ -93,31 +93,41 @@ export default function Register() {
 
   return (
     <Layout>
-      <div className="flex-grow flex flex-col md:flex-row min-h-[calc(100vh-64px)]">
+      <div className="relative z-10 flex-grow flex flex-col md:flex-row min-h-[calc(100vh-64px)] bg-[var(--base-bg)]/75">
         {/* Hero Background Panel */}
-        <div className="hidden md:flex md:w-2/5 lg:w-2/5 relative bg-[var(--combo-northern-black)] items-center justify-center overflow-hidden md:h-[calc(100vh-64px)]">
-          <div className="absolute inset-0 bg-[url('/connection-talent.png')] bg-cover bg-center opacity-50" style={{backgroundSize:'cover',backgroundPosition:'center',transform:'none',transition:'none'}} />
-          <div className="absolute inset-0 bg-gradient-to-r from-[var(--combo-northern-black)]/80 via-[var(--combo-northern-forest)]/30 to-[var(--combo-northern-black)]/70" />
+        <div className="hidden md:flex md:w-5/12 lg:w-1/2 relative bg-[var(--base-bg)]/70 items-center justify-center overflow-hidden md:h-[calc(100vh-64px)]">
+          <div className="absolute inset-0 z-0">
+            <img 
+              alt="Professional athlete background" 
+              className="w-full h-full object-cover opacity-50 grayscale contrast-125" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGJFLwGhlUSFCUSiOKObJlX7NRQMDhuz9XBUp2w-wH1i81JX-POtYInt5i9OohVDpxELltA2A1Fmn7ljHlGsyuSkcW0Wbr1ZqQjaVpQWhA2JHEllphEdTZv8xHDAOf5jm2efGhkIjRFB4SgvK9Gs_eIfhYdi1arTgmOvMqpTvEedvjIBZt-az9ePaovgH8ihM4gTRjGg6GyTcZJR4UjT95fLeXJqxRXV3PjMxbnWXEOWSKiVO1k3MR66_XMXKbX4ILXuKou-MCZFOj"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[var(--base-bg)]/50 via-[var(--base-bg)]/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--base-bg)]/40 via-transparent to-[var(--base-bg)]/40"></div>
+          </div>
           <div className="relative z-10 max-w-md px-12 text-center md:text-left">
-            <h2 className="font-display text-4xl lg:text-5xl text-[var(--combo-northern-white)] uppercase tracking-tight leading-tight mb-6">
-              Your <span className="text-[var(--accent)]">Journey</span> Starts Here
+            <h2 className="font-display text-4xl lg:text-6xl uppercase tracking-[-0.02em] leading-[1.1] mb-6" style={{ fontWeight: 300 }}>
+              <span className="text-[var(--text-primary)]">YOUR </span>
+              <span className="text-[var(--text-primary)] font-black italic">Journey </span>
+              <span className="text-[var(--text-primary)]">STARTS WITH </span>
+              <span className="text-[var(--neon-green)] font-black tracking-widest drop-shadow-[0_0_15px_rgba(49,237,49,0.4)]">REGISTRATION</span>
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-[var(--combo-northern-neon)] via-[var(--combo-northern-lime)] via-[var(--combo-northern-spearmint)] to-[var(--combo-northern-neon)] mb-6 mx-auto md:mx-0 shadow-sm shadow-[var(--combo-northern-neon)]/40" />
-            <p className="text-[var(--combo-northern-white)]/85 text-lg leading-relaxed">
-              Join MTP Talent Group and connect with elite agents, fellow athletes, and industry leaders across Canada and the USA.
+            <div className="w-20 h-1 bg-[var(--neon-green)] mt-8 mb-6 shadow-[0_0_10px_rgba(49,237,49,0.5)]"></div>
+            <p className="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
+              Secure your spot at the industry's most exclusive networking showcase. Connect with elite agents, athletes, models, entertainers, and industry leaders.
             </p>
           </div>
         </div>
 
         {/* Form Panel */}
-        <div className="w-full md:w-3/5 lg:w-3/5 bg-[var(--surface)] flex items-start justify-center p-8 lg:p-16 overflow-y-auto md:h-[calc(100vh-64px)]">
+        <div className="w-full md:w-3/5 lg:w-3/5 bg-[var(--base-bg)]/70 flex items-start justify-center p-8 lg:p-16 overflow-y-auto md:h-[calc(100vh-64px)]">
           <div className="w-full max-w-md">
             {submitted ? (
               <div className="text-center space-y-6">
-                <div className="size-20 bg-gradient-to-br from-[var(--combo-northern-forest)]/25 via-[var(--combo-northern-spearmint)]/15 to-[var(--combo-northern-white)] rounded-full flex items-center justify-center mx-auto border-2 border-[var(--combo-northern-forest)]/35 shadow-sm">
-                  <span className="material-symbols-outlined text-4xl text-[var(--combo-northern-forest)] drop-shadow-sm">check_circle</span>
+                <div className="size-20 bg-gradient-to-br from-[var(--kelly-green)]/25 via-[var(--spearmint)]/15 to-[var(--surface-card)] rounded-full flex items-center justify-center mx-auto border-2 border-[var(--neon-green)]/35 shadow-sm">
+                  <span className="material-symbols-outlined text-4xl text-[var(--neon-green)] drop-shadow-sm">check_circle</span>
                 </div>
-                <h1 className="font-display text-4xl text-[var(--text-primary)] uppercase tracking-tight">
+                <h1 className="font-display text-4xl text-[var(--text-primary)] uppercase tracking-[-0.02em]" style={{ fontWeight: 700 }}>
                   Registration Complete
                 </h1>
                 <p className="text-[var(--text-secondary)] text-lg">
@@ -125,7 +135,7 @@ export default function Register() {
                 </p>
                 <Link
                   to="/"
-                  className="inline-flex items-center justify-center bg-gradient-to-r from-[var(--combo-northern-forest)] via-[var(--combo-northern-neon)] to-[var(--combo-northern-forest)] hover:from-[var(--combo-northern-neon)] hover:via-[var(--combo-northern-lime)] hover:to-[var(--combo-northern-neon)] text-[var(--combo-northern-white)] h-14 px-8 rounded-xl font-bold uppercase tracking-wider transition-all"
+                  className="inline-flex items-center justify-center bg-[var(--neon-green)] text-[var(--base-bg)] h-14 px-8 rounded-[var(--radius)] font-bold uppercase tracking-wider transition-all hover:bg-[var(--neon-green-ripe)] hover:shadow-[0_0_20px_rgba(49,237,49,0.8)]"
                 >
                   Back to Home
                 </Link>
@@ -133,15 +143,17 @@ export default function Register() {
             ) : (
               <>
                 <div className="mb-8">
-                  <Link to="/" className="inline-flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)]">
+                  <Link to="/" className="inline-flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--neon-green)] transition-colors">
                     <span className="material-symbols-outlined">arrow_back</span>{' '}
                     Back to Home
                   </Link>
                 </div>
-                <h1 className="font-display text-4xl text-[var(--text-primary)] uppercase tracking-tight mb-4">
-                  Register for the Showcase
-                </h1>
-                <p className="text-[var(--text-secondary)] mb-10">Join elite athletes and industry leaders.</p>
+                <div className="mb-10">
+                  <h1 className="font-display text-4xl text-[var(--text-primary)] uppercase tracking-normal mb-4" style={{ fontWeight: 900 }}>
+                    REGISTER FOR THE SHOWCASE
+                  </h1>
+                  <p className="text-[var(--text-secondary)] text-lg">Join elite athletes, models, entertainers, and industry leaders.</p>
+                </div>
 
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   <div>
@@ -154,7 +166,7 @@ export default function Register() {
                       type="text"
                       required
                       placeholder="Enter your legal name"
-                      className="w-full bg-[var(--surface-alt)] border-2 border-[var(--border-muted)] rounded-xl h-14 px-4 text-[var(--text-primary)] focus:ring-2 focus:ring-[var(--accent)] focus:border-[var(--accent)] outline-none transition-all"
+                      className="form-input w-full h-14 px-4 text-[var(--text-primary)] placeholder:text-[var(--text-secondary)]/50 transition-all"
                     />
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -168,7 +180,7 @@ export default function Register() {
                         type="email"
                         required
                         placeholder="name@example.com"
-                        className="w-full bg-[var(--surface-alt)] border-2 border-[var(--border-muted)] rounded-xl h-14 px-4 text-[var(--text-primary)] focus:ring-2 focus:ring-[var(--accent)] focus:border-[var(--accent)] outline-none transition-all"
+                        className="w-full bg-[#121212]/70 border-[#1a2e1a] border-2 rounded-lg h-14 px-4 text-[var(--text-primary)] focus:ring-[var(--neon-green)] focus:border-[var(--neon-green)] transition-all placeholder:text-[var(--text-secondary)]/50"
                       />
                     </div>
                     <div>
@@ -181,7 +193,7 @@ export default function Register() {
                         type="tel"
                         required
                         placeholder="+1 (555) 000-0000"
-                        className="w-full bg-[var(--surface-alt)] border-2 border-[var(--border-muted)] rounded-xl h-14 px-4 text-[var(--text-primary)] focus:ring-2 focus:ring-[var(--accent)] focus:border-[var(--accent)] outline-none transition-all"
+                        className="w-full bg-[#121212]/70 border-[#1a2e1a] border-2 rounded-lg h-14 px-4 text-[var(--text-primary)] focus:ring-[var(--neon-green)] focus:border-[var(--neon-green)] transition-all placeholder:text-[var(--text-secondary)]/50"
                       />
                     </div>
                   </div>
@@ -238,8 +250,8 @@ export default function Register() {
                                 onChange={(e) => handleSocialUrlChange(platform.key, e.target.value)}
                                 placeholder={platform.placeholder}
                                 pattern={getSocialPattern(platform.key)}
-                                className={`w-full bg-[var(--surface-alt)] border-2 rounded-xl h-12 px-4 text-[var(--text-primary)] focus:ring-2 focus:ring-[var(--accent)] focus:border-[var(--accent)] outline-none transition-all ${
-                                  socialErrors[platform.key] ? 'border-red-300 focus:border-red-500 focus:ring-red-200' : 'border-[var(--border-muted)]'
+                                className={`w-full bg-[#121212]/70 border-2 rounded-lg h-12 px-4 text-[var(--text-primary)] focus:ring-[var(--neon-green)] focus:border-[var(--neon-green)] transition-all placeholder:text-[var(--text-secondary)]/50 ${
+                                  socialErrors[platform.key] ? 'border-red-500 focus:border-red-500 focus:ring-red-500/50' : 'border-[#1a2e1a]'
                                 }`}
                               />
                               {socialErrors[platform.key] && (
@@ -253,12 +265,12 @@ export default function Register() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[var(--combo-northern-forest)] via-[var(--combo-northern-neon)] to-[var(--combo-northern-forest)] hover:from-[var(--combo-northern-neon)] hover:via-[var(--combo-northern-lime)] hover:to-[var(--combo-northern-neon)] text-[var(--combo-northern-white)] h-14 rounded-xl font-bold uppercase tracking-wider transition-all shadow-lg shadow-[var(--combo-northern-neon)]/30 hover:shadow-xl hover:shadow-[var(--combo-northern-neon)]/50 hover:scale-[1.02]"
+                    className="w-full bg-[var(--neon-green)] text-[var(--base-bg)] h-16 rounded-lg font-black uppercase tracking-[0.2em] shadow-lg shadow-[var(--neon-green)]/10 transition-all hover:bg-[var(--base-bg)] hover:text-[var(--neon-green)] hover:border-2 hover:border-[var(--neon-green)] hover:scale-[1.01] active:scale-[0.99]"
                   >
-                    Register to be contacted
+                    SUBMIT REGISTRATION
                   </button>
-                  <p className="text-center text-xs text-[var(--text-secondary)]">
-                    By registering, you agree to our Terms of Service and Privacy Policy.
+                  <p className="text-center text-xs text-slate-500 font-medium">
+                    By registering, you agree to our <a href="#" className="underline hover:text-[var(--neon-green)] transition-colors">Terms of Service</a> and <a href="#" className="underline hover:text-[var(--neon-green)] transition-colors">Privacy Policy</a>.
                   </p>
                 </form>
               </>
