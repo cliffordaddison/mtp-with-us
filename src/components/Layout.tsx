@@ -9,15 +9,13 @@ interface LayoutProps {
 }
 
 const navLinkClass = (isActive: boolean) =>
-  `text-sm font-medium transition-all shrink-0 relative pb-0.5 ${
-    isActive
-      ? 'text-[var(--neon-green)] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--neon-green)] after:rounded-full'
-      : 'text-[var(--text-primary)] hover:text-[var(--neon-green)] hover:drop-shadow-[0_0_8px_rgba(49,237,49,0.5)]'
+  `text-sm font-medium transition-all shrink-0 relative pb-0.5 ${isActive
+    ? 'text-[var(--neon-green)] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--neon-green)] after:rounded-full'
+    : 'text-[var(--text-primary)] hover:text-[var(--neon-green)] hover:drop-shadow-[0_0_8px_rgba(49,237,49,0.5)]'
   }`
 
 const mobileNavLinkClass = (isActive: boolean) =>
-  `block py-3 px-4 font-medium transition-colors border-b border-[var(--kelly-green)]/20 last:border-0 ${
-    isActive ? 'text-[var(--neon-green)] bg-[var(--neon-green)]/10' : 'text-[var(--text-primary)] hover:text-[var(--neon-green)] hover:bg-[var(--surface-card)]'
+  `block py-3 px-4 font-medium transition-colors border-b border-[var(--kelly-green)]/20 last:border-0 ${isActive ? 'text-[var(--neon-green)] bg-[var(--neon-green)]/10' : 'text-[var(--text-primary)] hover:text-[var(--neon-green)] hover:bg-[var(--surface-card)]'
   }`
 
 export function Layout({ children }: LayoutProps) {
@@ -45,12 +43,11 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen relative">
       <LogoBackground />
-      <header 
-        className={`sticky top-0 z-50 w-full transition-all duration-300 relative ${
-          isScrolled 
-            ? 'bg-[#000000e6] border-b border-[var(--kelly-green)]' 
+      <header
+        className={`sticky top-0 z-50 w-full transition-all duration-300 relative ${isScrolled
+            ? 'bg-[#000000e6] border-b border-[var(--kelly-green)]'
             : 'bg-[#000000]/95 border-b border-transparent'
-        }`}
+          }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-16 py-2 sm:py-0 flex items-center justify-between gap-3">
           <Link to="/" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0" onClick={closeMobileMenu}>
@@ -63,8 +60,8 @@ export function Layout({ children }: LayoutProps) {
             </div>
           </Link>
           <nav className="hidden md:flex items-center gap-8 shrink-0">
-            <Link 
-              to="/#who-we-are" 
+            <Link
+              to="/#who-we-are"
               className={navLinkClass(activeSection === 'who-we-are')}
               onClick={(e) => {
                 const hash = '#who-we-are'
@@ -79,8 +76,8 @@ export function Layout({ children }: LayoutProps) {
             >
               About
             </Link>
-            <Link 
-              to="/#services" 
+            <Link
+              to="/#services"
               className={navLinkClass(activeSection === 'services')}
               onClick={(e) => {
                 const hash = '#services'
@@ -95,8 +92,8 @@ export function Layout({ children }: LayoutProps) {
             >
               Services
             </Link>
-            <Link 
-              to="/#team" 
+            <Link
+              to="/#team"
               className={navLinkClass(activeSection === 'team')}
               onClick={(e) => {
                 const hash = '#team'
@@ -111,8 +108,8 @@ export function Layout({ children }: LayoutProps) {
             >
               Team
             </Link>
-            <Link 
-              to="/#careers" 
+            <Link
+              to="/#careers"
               className={navLinkClass(activeSection === 'careers')}
               onClick={(e) => {
                 const hash = '#careers'
@@ -127,8 +124,8 @@ export function Layout({ children }: LayoutProps) {
             >
               Careers
             </Link>
-            <Link 
-              to="/#contact" 
+            <Link
+              to="/#contact"
               className={navLinkClass(activeSection === 'contact')}
               onClick={(e) => {
                 const hash = '#contact'
@@ -168,9 +165,9 @@ export function Layout({ children }: LayoutProps) {
         </div>
         {mobileMenuOpen && (
           <nav className={`md:hidden border-t ${isScrolled ? 'border-[var(--kelly-green)] bg-[#000000e6]' : 'border-transparent bg-transparent'} shadow-lg transition-all duration-300`}>
-            <Link 
-              to="/#who-we-are" 
-              className={mobileNavLinkClass(activeSection === 'who-we-are')} 
+            <Link
+              to="/#who-we-are"
+              className={mobileNavLinkClass(activeSection === 'who-we-are')}
               onClick={(e) => {
                 closeMobileMenu()
                 const hash = '#who-we-are'
@@ -185,9 +182,9 @@ export function Layout({ children }: LayoutProps) {
             >
               About
             </Link>
-            <Link 
-              to="/#services" 
-              className={mobileNavLinkClass(activeSection === 'services')} 
+            <Link
+              to="/#services"
+              className={mobileNavLinkClass(activeSection === 'services')}
               onClick={(e) => {
                 closeMobileMenu()
                 const hash = '#services'
@@ -202,9 +199,9 @@ export function Layout({ children }: LayoutProps) {
             >
               Services
             </Link>
-            <Link 
-              to="/#team" 
-              className={mobileNavLinkClass(activeSection === 'team')} 
+            <Link
+              to="/#team"
+              className={mobileNavLinkClass(activeSection === 'team')}
               onClick={(e) => {
                 closeMobileMenu()
                 const hash = '#team'
@@ -219,9 +216,9 @@ export function Layout({ children }: LayoutProps) {
             >
               Team
             </Link>
-            <Link 
-              to="/#careers" 
-              className={mobileNavLinkClass(activeSection === 'careers')} 
+            <Link
+              to="/#careers"
+              className={mobileNavLinkClass(activeSection === 'careers')}
               onClick={(e) => {
                 closeMobileMenu()
                 const hash = '#careers'
@@ -236,9 +233,9 @@ export function Layout({ children }: LayoutProps) {
             >
               Careers
             </Link>
-            <Link 
-              to="/#contact" 
-              className={mobileNavLinkClass(activeSection === 'contact')} 
+            <Link
+              to="/#contact"
+              className={mobileNavLinkClass(activeSection === 'contact')}
               onClick={(e) => {
                 closeMobileMenu()
                 const hash = '#contact'
@@ -287,10 +284,10 @@ function FooterContent() {
             </div> */}
             <div className="flex gap-3">
               <a href="https://instagram.com/mtpwithus" target="_blank" rel="noopener noreferrer" className="social-icon size-9 rounded-full bg-white/10 flex items-center justify-center text-[var(--text-primary)] hover:text-[var(--neon-green)] hover:scale-110 transition-all border border-white/20 hover:border-[var(--neon-green)]/50" aria-label="Instagram">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z" /></svg>
               </a>
               <a href="https://twitter.com/mtpwithus" target="_blank" rel="noopener noreferrer" className="social-icon size-9 rounded-full bg-white/10 flex items-center justify-center text-[var(--text-primary)] hover:text-[var(--neon-green)] hover:scale-110 transition-all border border-white/20 hover:border-[var(--neon-green)]/50" aria-label="Twitter">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
               </a>
             </div>
             <p className="text-xs text-[var(--combo-northern-white)]/60">Instagram @mtpwithus · Twitter @mtpwithus</p>
@@ -314,13 +311,13 @@ function FooterContent() {
             <h5 className="text-xs font-bold uppercase tracking-widest text-[var(--combo-northern-white)]/70 mb-4">Newsletter</h5>
             <p className="text-sm text-[var(--combo-northern-white)]/80 mb-4">Latest insights and athlete updates.</p>
             <form className="flex flex-col gap-2">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                className="newsletter-input rounded-[var(--radius)] h-10 px-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-secondary)]/50 focus:ring-2 focus:ring-[var(--neon-green)] focus:border-[var(--neon-green)] outline-none transition-all" 
+              <input
+                type="email"
+                placeholder="Your email"
+                className="newsletter-input rounded-[var(--radius)] h-10 px-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-secondary)]/50 focus:ring-2 focus:ring-[var(--neon-green)] focus:border-[var(--neon-green)] outline-none transition-all"
               />
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="subscribe-button bg-[var(--neon-green)] text-[var(--base-bg)] rounded-[var(--radius)] h-10 text-sm font-bold uppercase tracking-wider transition-all hover:shadow-[0_0_15px_rgba(49,237,49,0.6)]"
               >
                 Subscribe
@@ -331,7 +328,7 @@ function FooterContent() {
         <div className="mt-8 pt-8">
           <h5 className="font-display text-sm font-bold uppercase tracking-widest text-[var(--neon-green)] mb-4">Land Acknowledgement</h5>
           <p className="text-base text-[var(--combo-northern-white)]/90 leading-relaxed">
-            We acknowledge the land we are meeting on is the traditional territory of many nations including the Mississaugas of the Credit, the Anishnabeg, the Chippewa, the Haudenosaunee and the Wendat peoples and is now home to many diverse First Nations, Inuit and Métis peoples. We also acknowledge that Toronto is covered by Treaty 13 with the Mississaugas of the Credit.
+            We acknowledge the land we are on is the traditional territory of many nations including the Mississaugas of the Credit, the Anishnabeg, the Chippewa, the Haudenosaunee and the Wendat peoples and is now home to many diverse First Nations, Inuit and Métis peoples. We also acknowledge that Toronto is covered by Treaty 13 with the Mississaugas of the Credit.
           </p>
         </div>
         <div className="mt-8 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[var(--combo-northern-white)]/60 text-xs">
