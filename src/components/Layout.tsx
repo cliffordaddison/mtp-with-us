@@ -57,9 +57,9 @@ export function Layout({ children }: LayoutProps) {
             <Logo className="size-8 sm:size-9 transition-transform group-hover:scale-105 shrink-0" />
             <div className="flex flex-col min-w-0">
               <span className="font-display text-base sm:text-xl tracking-tight text-[var(--text-primary)] leading-tight">
-                MTP<span className="text-[var(--neon-green)]">WITHUS</span>
+                Maximize the Potential (MTP)
               </span>
-              <span className="font-display text-[10px] sm:text-xs tracking-wide text-[var(--text-primary)]/70 uppercase leading-tight border-l-2 border-[var(--neon-green)]/40 pl-2 ml-2">Maximize the Potential (MTP)</span>
+              <span className="font-display text-[10px] sm:text-xs tracking-wide text-[var(--neon-green)] uppercase leading-tight border-l-2 border-[var(--neon-green)]/40 pl-2 ml-2">#MTPWITHUS</span>
             </div>
           </Link>
           <nav className="hidden md:flex items-center gap-8 shrink-0">
@@ -273,12 +273,12 @@ function FooterContent() {
             <Link to="/" className="flex items-center gap-2">
               <Logo className="size-10 brightness-0 invert" />
               <div className="flex flex-col">
-                <span className="font-display text-xl tracking-tight leading-tight">MTPWITHUS</span>
-                <span className="font-display text-xs tracking-wide text-[var(--combo-northern-white)]/70 uppercase">Maximize the Potential</span>
+                <span className="font-display text-xl tracking-tight leading-tight">Maximize the Potential</span>
+                <span className="font-display text-xs tracking-wide text-[var(--neon-green)] uppercase">#MTPWITHUS</span>
               </div>
             </Link>
             <p className="text-[var(--combo-northern-white)]/80 text-sm leading-relaxed">
-              MTP Talent Group is a culture connecting talent boutique delivering positive provoking content, curated events, and brand exclusive moments.
+              MTP Talent Group is a culture connecting talent boutique delivering provokingly positive content, carefully curated events, and brand exclusive moments.
             </p>
             {/* <div className="space-y-1 text-sm">
               <p className="font-semibold text-white">Owner, Maximize the Potential</p>
@@ -331,7 +331,7 @@ function FooterContent() {
         <div className="mt-8 pt-8">
           <h5 className="font-display text-sm font-bold uppercase tracking-widest text-[var(--neon-green)] mb-4">Land Acknowledgement</h5>
           <p className="text-base text-[var(--combo-northern-white)]/90 leading-relaxed">
-            We acknowledge the land Women's Healthy Living Show is taking place on is the traditional territory of many nations including the Mississaugas of the Credit, the Anishnabeg, the Chippewa, the Haudenosaunee and the Wendat peoples and is now home to many diverse First Nations, Inuit and Métis peoples. We also acknowledge that Toronto is covered by Treaty 13 with the Mississaugas of the Credit.
+            We acknowledge the land we are meeting on is the traditional territory of many nations including the Mississaugas of the Credit, the Anishnabeg, the Chippewa, the Haudenosaunee and the Wendat peoples and is now home to many diverse First Nations, Inuit and Métis peoples. We also acknowledge that Toronto is covered by Treaty 13 with the Mississaugas of the Credit.
           </p>
         </div>
         <div className="mt-8 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[var(--combo-northern-white)]/60 text-xs">

@@ -10,22 +10,22 @@ export default function Home() {
           <div className="absolute inset-0 bg-[url('/hero-3panel.png')] bg-cover bg-center opacity-40" />
           <div className="absolute inset-0 bg-[var(--base-bg)]/60" />
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--base-bg)]/50 via-[var(--kelly-green)]/20 to-[var(--base-bg)]/60" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="font-display text-5xl sm:text-6xl md:text-8xl leading-[0.95] tracking-[-0.02em] uppercase" style={{ fontWeight: 800 }}>
-            <span className="text-[var(--text-primary)]">Outwork Your Greatest Competition...</span>
-            <span className="text-[var(--neon-green)]">You!</span>
-          </h1>
-          <p className="mt-8 text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
-            MTP Talent Group is a culture connecting talent boutique. We deliver positive provoking content, curated inspired events, and brand exclusive moments.
-          </p>
-          <Link
-            to="/register"
-            className="mt-10 inline-flex items-center justify-center rounded-[var(--radius)] h-14 px-10 border-2 border-[var(--neon-green)] text-[var(--neon-green)] text-base font-bold uppercase tracking-widest hover:bg-[var(--neon-green)] hover:text-[var(--base-bg)] transition-all hover:scale-105"
-          >
-            BEGIN YOUR JOURNEY
-          </Link>
-        </div>
-      </section>
+          <div className="relative z-10 max-w-4xl mx-auto text-center">
+            <h1 className="font-display text-5xl sm:text-6xl md:text-8xl leading-[0.95] tracking-[-0.02em] uppercase" style={{ fontWeight: 800 }}>
+              <span className="text-[var(--text-primary)]">Outwork Your Greatest Competition...</span>
+              <span className="text-[var(--neon-green)]">You!</span>
+            </h1>
+            <p className="mt-8 text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
+              MTP Talent Group is a culture connecting talent boutique. We deliver provokingly positive content, carefully curated inspired events, and brand exclusive moments.
+            </p>
+            <Link
+              to="/register"
+              className="mt-10 inline-flex items-center justify-center rounded-[var(--radius)] h-14 px-10 border-2 border-[var(--neon-green)] text-[var(--neon-green)] text-base font-bold uppercase tracking-widest hover:bg-[var(--neon-green)] hover:text-[var(--base-bg)] transition-all hover:scale-105"
+            >
+              BEGIN YOUR JOURNEY
+            </Link>
+          </div>
+        </section>
       </div>
 
       {/* Who We Are */}
@@ -38,16 +38,16 @@ export default function Home() {
           <div className="space-y-8 text-[var(--text-secondary)] leading-relaxed">
             <p>
               MTP Talent Group is a culture connecting talent boutique. Our expertise includes delivering
-              positive provoking produced content, curated inspired events, fostering business development,
+              provokingly positive produced content, carefully curated inspired events, fostering business development,
               and creating brand exclusive moments. MTP aims to set distinguishment with their clients
-              amongst other like-level talent. Through our events we inspire our client&apos;s voice to scream and
+              amongst other peer-level talent. Through our events we encourage our clients&apos; voices to scream and
               their brands to stand tall. We bring forth a rewarding and vigorous commercial journey for each
-              of our talents, while with the utmost transparency MTP will provide a full-service management
+              of our talents, while with the utmost transparency MTP provides a full-service management
               relationship. We work closely with our clients to level up their presence and brands, through
-              out of the box thinking and unique experiences which excel consumer visibility and drive
+              out-of-the-box thinking and unique experiences to excel consumer visibility and drive
               encouraging data.
             </p>
-            
+
             {/* Mission - Using Bright Northern Lights Forest + White/Black toning */}
             <div className="service-card p-8">
               <h3 className="font-display text-3xl md:text-4xl text-[var(--kelly-green)] uppercase tracking-[-0.02em] mb-4 flex items-center gap-3" style={{ fontWeight: 700 }}>
@@ -55,8 +55,8 @@ export default function Home() {
                 Mission
               </h3>
               <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
-                Our mission is always the same: To provide timely, efficient project delivery with full lifecycle
-                support backed by transparency, fueled by knowledge, topped with experience, and over-loaded with creativity.
+                Our mission is always the same. To provide timely, efficient project delivery with full lifecycle
+                support. Backed by transparency, fueled by knowledge, topped with experience, and over-loaded with creativity.
               </p>
             </div>
 
@@ -67,7 +67,7 @@ export default function Home() {
                 Vision
               </h3>
               <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
-                Build valued, trusting, and secure relationships with brand clients, talent, employees,
+                Build value, trust, and secure relationships with brand clients, talent, employees,
                 and partners through ethical and innovative leadership.
               </p>
             </div>
@@ -84,9 +84,9 @@ export default function Home() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'Competence', text: 'MTP attracts a diverse group of employees, who expertise, knowledge, and experience allow us to be forward thinkers while delivering superior solutions.', color: 'var(--neon-green)' },
-              { title: 'Fairness', text: 'MTP promotes mutual respect and fairness throughout its business practices and when dealing with clients. We trust that every interaction is treated ethically to ensure our future is always bright.', color: 'var(--spearmint)' },
-              { title: 'Collaboration', text: 'MTP believes to leverage expertise and reach a common goal, we have to develop a strong collective relationship with partners all over the world.', color: 'var(--kelly-green)' },
+              { title: 'Competence', text: 'MTP attracts a diverse group of employees, whose expertise, knowledge, and experience allows us to be forward thinkers while delivering superior solutions.', color: 'var(--neon-green)' },
+              { title: 'Fairness', text: 'MTP promotes mutual respect and fairness throughout its business practices and when dealing with clients, and We trust that every interaction is treated ethically to ensure a bright future.', color: 'var(--spearmint)' },
+              { title: 'Collaboration', text: 'MTP believes that to leverage expertise and reach a common goal, we have to develop a strong collective relationship with partners all over the world.', color: 'var(--kelly-green)' },
             ].map((v) => (
               <div key={v.title} className="service-card p-8">
                 <h3 className="font-display text-2xl uppercase mb-4" style={{ color: v.color, fontWeight: 700 }}>{v.title}</h3>
@@ -106,11 +106,11 @@ export default function Home() {
           </h2>
           <div className="space-y-8">
             {[
-              { title: 'Talent Management', desc: "We carefully hand pick our roster of athletes, creators, and move-makers, engaging their personal brands' growth while ensuring opportunities align best. Our team on request, prepares talent to confidently map the industry due to MTP's versed partnerships, supported performance growth, and negotiation of contracts. We vigorously search for brands that activate with our clients to ensure optimization of their plan. Our talents are able to stay focused on continuing to be at the top of their game, while we provide a clear as crystal day to day support system. It's also very vital to us that wherever possible we have a great relationship with our talent's family." },
-              { title: 'Brand Connection', desc: "We spark the heartbeat through disruptive, culture connective experiences that spark and relays an unforgettable imprint. Your audience won't just click then scroll, they'll engage and act. Our consumer-first positioning is vibrant, captivating, and immersive. We do it all…. Give us an idea…. We will work creatively to align your activation's vision resulting in an impactful and meaningful brand voice." },
-              { title: 'Live Events with Athletes, Influencers, and or Talent', desc: "Have a thought, let MTP craft the rest. From pre-planning to the day of your event, we can transition at any stage and provide top tier, professional execution. We focus closely on the target audience, the vision of the event, and how the vibe will impact the attendees in a positive and memorable way. Our team is versatile and ready for what our client's throw at us. Live event post generates a greater engagement when it done by an athlete, influencer, or talent. Contact MTP and let the creatives begin." },
-              { title: 'Digital Media Campaign', desc: "Do you want the audience to stop scrolling at your visuals, click, listen, and engage? Our team has years of experience developing content ready, message invoking material, that is tailored to your vision. Through data tracking we are able to deliver enhanced performance capabilities, and adjust when we see fit. Your campaign rollout will have the most unparallelled creative content, with the best production value. Choose MTP and let's get rolling." },
-              { title: 'Performance Development', desc: "In our athlete's busy world, achievements are hard to obtain without a team. MTP's performance success strategy is primarily designed for our athletes. We place a capsule around our athletes of sports nutritionists, S & C trainers, mindset coach, athletic therapists, and massage therapists to further enhance an athlete's optimal performance." },
+              { title: 'Talent Management', desc: "We carefully hand pick our roster of athletes, creators, and changemakers, engaging their personal brand's growth while ensuring opportunities best align. Our team, upon request, prepare talent to confidently map the industry due to MTP's versed partnerships, supported performance growth, and contract negotiations. We vigorously search for brands that activate with our clients to ensure optimization of their plan. The talent is then able to stay focused on continuing to be at the top of their game, while we provide a crystal clear day-to-day support system. It's vital to us, we maintain a transparent relationship with our talent's family." },
+              { title: 'Brand Connection', desc: "We spark the heartbeat through disruptive, culture connective experiences that relay an unforgettable imprint. Your audience won't just click then scroll, they'll engage and act. Our consumer-first positioning is vibrant, captivating, and immersive. We do it all…. Give us an idea…. We will work creatively to align your activation vision resulting in an impactful and meaningful brand voice." },
+              { title: 'Live Events with Athletes, Influencers, and or Talent', desc: "Have a thought, let MTP craft the rest. From pre-planning to the day of your event, we can transition at any stage and provide top tier, professional execution. We focus closely on the target audience, the vision of the event, and how the vibe will impact the attendees in a positive and memorable way. Our team is versatile and ready for what our client's throw at us. LIVE events \"posts\" generate a greater engagement when done by an athlete, influencer, or talent. Contact MTP and let the creatives begin." },
+              { title: 'Digital Media Campaign', desc: "Do you want the audience to stop scrolling at your visuals, click, listen, and engage? Our team has years of experience developing content ready, message invoking material, that is tailored to your vision. Through data tracking we are able to deliver enhanced performance capabilities, and adjust where we see fit. Your campaign rollout will have the most unparallelled creative content, with the best production value. Choose MTP and let's get rolling." },
+              { title: 'Performance Development', desc: "In any athlete's demanding world, achievements are hard to obtain without a team. MTP's performance success strategy is primarily designed for our athletes. We place a capsule comprised of sports nutritionists, S & C trainers, mindset coaches, athletic therapists, and massage therapists around our talent to further enhance optimal performance." },
               { title: 'Youngstar Program', desc: "This program focuses on identifying, supporting, and providing bullseye development for young athletes. We create a fun, engaging environment that allows these athletes to be surrounded with positive growth. Selection process happens once a year, we prepare our youngSTARs to join us on showcase tours, whether it is to the USA or Europe." },
               { title: 'NIL (Name, Image, Likeness)', desc: "NIL is an important division of our growth. This is where our foot hits the accelerator for our College and High School Athletes. We provide comprehensive NIL deal procurement, brand partnership opportunities, and marketing support to help student athletes maximize their potential while maintaining NCAA compliance." },
             ].map((s) => (
@@ -158,7 +158,7 @@ export default function Home() {
       <section id="careers" className="relative z-10 py-24 scroll-mt-20 bg-[var(--base-bg)]/75">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="font-display text-4xl md:text-5xl uppercase tracking-[-0.02em] mb-12" style={{ fontWeight: 700 }}>
-            <span className="text-[var(--text-primary)]">Company Potential </span>
+            <span className="text-[var(--text-primary)]">Open </span>
             <span className="text-[var(--neon-green)]">Positions</span>
           </h2>
           <ul className="space-y-4 mb-16">

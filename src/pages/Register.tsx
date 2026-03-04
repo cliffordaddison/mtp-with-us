@@ -97,9 +97,9 @@ export default function Register() {
         {/* Hero Background Panel */}
         <div className="hidden md:flex md:w-5/12 lg:w-1/2 relative bg-[var(--base-bg)]/70 items-center justify-center overflow-hidden md:h-[calc(100vh-64px)]">
           <div className="absolute inset-0 z-0">
-            <img 
-              alt="Professional athlete background" 
-              className="w-full h-full object-cover opacity-50 grayscale contrast-125" 
+            <img
+              alt="Professional athlete background"
+              className="w-full h-full object-cover opacity-50 grayscale contrast-125"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGJFLwGhlUSFCUSiOKObJlX7NRQMDhuz9XBUp2w-wH1i81JX-POtYInt5i9OohVDpxELltA2A1Fmn7ljHlGsyuSkcW0Wbr1ZqQjaVpQWhA2JHEllphEdTZv8xHDAOf5jm2efGhkIjRFB4SgvK9Gs_eIfhYdi1arTgmOvMqpTvEedvjIBZt-az9ePaovgH8ihM4gTRjGg6GyTcZJR4UjT95fLeXJqxRXV3PjMxbnWXEOWSKiVO1k3MR66_XMXKbX4ILXuKou-MCZFOj"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[var(--base-bg)]/50 via-[var(--base-bg)]/20 to-transparent"></div>
@@ -150,15 +150,15 @@ export default function Register() {
                 </div>
                 <div className="mb-10">
                   <h1 className="font-display text-4xl text-[var(--text-primary)] uppercase tracking-normal mb-4" style={{ fontWeight: 900 }}>
-                    REGISTER FOR THE SHOWCASE
+                    SHOWCASE REGISTRATION
                   </h1>
-                  <p className="text-[var(--text-secondary)] text-lg">Join elite athletes, models, entertainers, and industry leaders.</p>
+                  <p className="text-[var(--text-secondary)] text-lg">Join Us</p>
                 </div>
 
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   <div>
                     <label htmlFor="full-name" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-2">
-                      Full Name
+                      Full Name <span className="text-[var(--neon-green)]">*</span>
                     </label>
                     <input
                       id="full-name"
@@ -172,7 +172,7 @@ export default function Register() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-2">
-                        Email
+                        Email <span className="text-[var(--neon-green)]">*</span>
                       </label>
                       <input
                         id="email"
@@ -185,7 +185,7 @@ export default function Register() {
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-2">
-                        Phone
+                        Phone <span className="text-[var(--neon-green)]">*</span>
                       </label>
                       <input
                         id="phone"
@@ -199,7 +199,7 @@ export default function Register() {
                   </div>
                   <div>
                     <div className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">
-                      I am a:
+                      I am a: <span className="text-[var(--neon-green)]">*</span>
                     </div>
                     <div className="flex items-start gap-8">
                       {['Athlete', 'Model', 'Entertainer'].map((roleOption) => (
@@ -250,9 +250,8 @@ export default function Register() {
                                 onChange={(e) => handleSocialUrlChange(platform.key, e.target.value)}
                                 placeholder={platform.placeholder}
                                 pattern={getSocialPattern(platform.key)}
-                                className={`w-full bg-[#121212]/70 border-2 rounded-lg h-12 px-4 text-[var(--text-primary)] focus:ring-[var(--neon-green)] focus:border-[var(--neon-green)] transition-all placeholder:text-[var(--text-secondary)]/50 ${
-                                  socialErrors[platform.key] ? 'border-red-500 focus:border-red-500 focus:ring-red-500/50' : 'border-[#1a2e1a]'
-                                }`}
+                                className={`w-full bg-[#121212]/70 border-2 rounded-lg h-12 px-4 text-[var(--text-primary)] focus:ring-[var(--neon-green)] focus:border-[var(--neon-green)] transition-all placeholder:text-[var(--text-secondary)]/50 ${socialErrors[platform.key] ? 'border-red-500 focus:border-red-500 focus:ring-red-500/50' : 'border-[#1a2e1a]'
+                                  }`}
                               />
                               {socialErrors[platform.key] && (
                                 <p className="mt-1 text-xs text-red-500">{socialErrors[platform.key]}</p>
@@ -270,7 +269,7 @@ export default function Register() {
                     SUBMIT REGISTRATION
                   </button>
                   <p className="text-center text-xs text-slate-500 font-medium">
-                    By registering, you agree to our <a href="#" className="underline hover:text-[var(--neon-green)] transition-colors">Terms of Service</a> and <a href="#" className="underline hover:text-[var(--neon-green)] transition-colors">Privacy Policy</a>.
+                    <span className="text-[var(--neon-green)]">*</span> Required fields &nbsp;·&nbsp; By registering, you agree to our <a href="#" className="underline hover:text-[var(--neon-green)] transition-colors">Terms of Service</a> and <a href="#" className="underline hover:text-[var(--neon-green)] transition-colors">Privacy Policy</a>.
                   </p>
                 </form>
               </>
