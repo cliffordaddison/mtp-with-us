@@ -108,22 +108,7 @@ export function Layout({ children }: LayoutProps) {
             >
               Team
             </Link>
-            <Link
-              to="/#careers"
-              className={navLinkClass(activeSection === 'careers')}
-              onClick={(e) => {
-                const hash = '#careers'
-                const element = document.getElementById('careers')
-                if (element && globalThis.location.pathname === '/') {
-                  e.preventDefault()
-                  const top = element.getBoundingClientRect().top + globalThis.scrollY - 120
-                  globalThis.scrollTo({ top, behavior: 'smooth' })
-                  globalThis.history.pushState(null, '', hash)
-                }
-              }}
-            >
-              Careers
-            </Link>
+{/* Careers nav link — hidden (internal use only) */}
             <Link
               to="/#contact"
               className={navLinkClass(activeSection === 'contact')}
@@ -159,7 +144,7 @@ export function Layout({ children }: LayoutProps) {
               to="/register"
               className="flex items-center justify-center rounded-[var(--radius)] h-9 sm:h-10 px-3 sm:px-5 text-xs sm:text-sm font-bold uppercase transition-all shrink-0 bg-[var(--neon-green)] text-[var(--base-bg)] hover:bg-[var(--base-bg)] hover:text-[var(--neon-green)] hover:border-2 hover:border-[var(--neon-green)] hover:shadow-[0_0_20px_rgba(49,237,49,0.8)]"
             >
-              GET STARTED
+              CONTACT US
             </Link>
           </div>
         </div>
@@ -216,23 +201,7 @@ export function Layout({ children }: LayoutProps) {
             >
               Team
             </Link>
-            <Link
-              to="/#careers"
-              className={mobileNavLinkClass(activeSection === 'careers')}
-              onClick={(e) => {
-                closeMobileMenu()
-                const hash = '#careers'
-                const element = document.getElementById('careers')
-                if (element && globalThis.location.pathname === '/') {
-                  e.preventDefault()
-                  const top = element.getBoundingClientRect().top + globalThis.scrollY - 120
-                  globalThis.scrollTo({ top, behavior: 'smooth' })
-                  globalThis.history.pushState(null, '', hash)
-                }
-              }}
-            >
-              Careers
-            </Link>
+{/* Mobile Careers nav link — hidden (internal use only) */}
             <Link
               to="/#contact"
               className={mobileNavLinkClass(activeSection === 'contact')}

@@ -154,8 +154,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Careers */}
-      <section id="careers" className="relative z-10 py-24 scroll-mt-20 bg-[var(--base-bg)]/75">
+      {/* ============================================================
+          INTERNAL USE ONLY — NOT SHOWN ON PUBLIC SITE
+          Open Positions & Sports Wing listings — uncomment to restore
+      ============================================================ */}
+      {/* <section id="careers" className="relative z-10 py-24 scroll-mt-20 bg-[var(--base-bg)]/75">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="font-display text-4xl md:text-5xl uppercase tracking-[-0.02em] mb-12" style={{ fontWeight: 700 }}>
             <span className="text-[var(--text-primary)]">Open </span>
@@ -182,7 +185,7 @@ export default function Home() {
             ))}
           </ul>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <div className="relative isolate overflow-hidden bg-[var(--base-bg)]">
