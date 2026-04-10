@@ -136,20 +136,43 @@ export default function Home() {
             <span className="text-[var(--text-primary)]">Meet The </span>
             <span className="text-[var(--neon-green)]">Team</span>
           </h2>
-          <div className="mb-8 flex justify-center">
-            <div className="size-48 rounded-full bg-gradient-to-br from-[var(--kelly-green)] to-[var(--base-bg)] flex items-center justify-center text-[var(--text-primary)] font-display text-5xl shadow-xl relative" style={{ padding: '3px' }}>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[var(--neon-green)] to-[var(--kelly-green)] opacity-75 -z-10"></div>
-              <div className="size-full rounded-full bg-gradient-to-br from-[var(--kelly-green)] to-[var(--base-bg)] flex items-center justify-center">
-                DA
+          <div className="space-y-24">
+            {/* Dean Akinmusire */}
+            <div className="flex flex-col items-center">
+              <div className="mb-8 flex justify-center">
+                <div className="size-48 rounded-full bg-gradient-to-br from-[var(--kelly-green)] to-[var(--base-bg)] flex items-center justify-center text-[var(--text-primary)] font-display text-5xl shadow-xl relative" style={{ padding: '3px' }}>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[var(--neon-green)] to-[var(--kelly-green)] opacity-75 -z-10"></div>
+                  <div className="size-full rounded-full bg-gradient-to-br from-[var(--kelly-green)] to-[var(--base-bg)] flex items-center justify-center">
+                    DA
+                  </div>
+                </div>
+              </div>
+              <h3 className="font-display text-2xl text-[var(--text-primary)] mb-2" style={{ fontWeight: 600, fontSize: '20px' }}>Dean Akinmusire</h3>
+              <p className="text-[var(--kelly-green)] uppercase tracking-widest text-sm mt-2 mb-8" style={{ fontSize: '14px' }}>OWNER AND FOUNDER</p>
+              <div className="text-left space-y-6 text-[var(--text-secondary)] leading-relaxed" style={{ fontSize: '14px' }}>
+                <p>Dean Akinmusire, has 20 years of service working in the retail industry where he learned how to deliver focused conversation to build strong and lasting relationship with consumers. Let&apos;s just say Dean has a knack for keeping the needs of people his main concern. Prior to that, Dean worked over 7 years in the marketing and advertising field, working closely with Fortune 500 accounts to innovatively build their brands and deliver their message. Dean easily navigated complex request, with seamless effort to bring forth a visually appealing promotion. Dean was an active participant with the launch of Honda Canada&apos;s &quot;Civic Nation&quot; campaign, delivering unparallel results to Honda&apos;s long history in Canada. He worked closely with Mercedes Benz, to formulate a marketing campaign that activated consumer interest. Dean has guided projects that included Olympians, NBA celebrity trainers, Pro tennis players, and more.</p>
+                <p>After leaving his career of 20 years in 2025, Dean has embarked on a passion to guide clients through a journey that can be confusing at times. His has a determined willingness to provide clients with unwavering success, that uplift their platform and mirror their values. With the activation of Maximize the Potential (MTP) Talent Group, he is at the helm of making it all happen.</p>
+                <p>Dean is a dedicated father of six children, so he understands the hustle of the sports world. Four of his six children played competitive sports, one had a small stint with TFC Academy (MLS youth Academy team). If anyone can tend to a talent&apos;s needs, deliver data caption value with patience and determination, it&apos;s Dean Akinmusire and MTP Talent Group.</p>
               </div>
             </div>
-          </div>
-          <h3 className="font-display text-2xl text-[var(--text-primary)] mb-2" style={{ fontWeight: 600, fontSize: '20px' }}>Dean Akinmusire</h3>
-          <p className="text-[var(--kelly-green)] uppercase tracking-widest text-sm mt-2 mb-8" style={{ fontSize: '14px' }}>OWNER AND FOUNDER</p>
-          <div className="text-left space-y-6 text-[var(--text-secondary)] leading-relaxed" style={{ fontSize: '14px' }}>
-            <p>Dean Akinmusire, has 20 years of service working in the retail industry where he learned how to deliver focused conversation to build strong and lasting relationship with consumers. Let&apos;s just say Dean has a knack for keeping the needs of people his main concern. Prior to that, Dean worked over 7 years in the marketing and advertising field, working closely with Fortune 500 accounts to innovatively build their brands and deliver their message. Dean easily navigated complex request, with seamless effort to bring forth a visually appealing promotion. Dean was an active participant with the launch of Honda Canada&apos;s &quot;Civic Nation&quot; campaign, delivering unparallel results to Honda&apos;s long history in Canada. He worked closely with Mercedes Benz, to formulate a marketing campaign that activated consumer interest. Dean has guided projects that included Olympians, NBA celebrity trainers, Pro tennis players, and more.</p>
-            <p>After leaving his career of 20 years in 2025, Dean has embarked on a passion to guide clients through a journey that can be confusing at times. His has a determined willingness to provide clients with unwavering success, that uplift their platform and mirror their values. With the activation of Maximize the Potential (MTP) Talent Group, he is at the helm of making it all happen.</p>
-            <p>Dean is a dedicated father of six children, so he understands the hustle of the sports world. Four of his six children played competitive sports, one had a small stint with TFC Academy (MLS youth Academy team). If anyone can tend to a talent&apos;s needs, deliver data caption value with patience and determination, it&apos;s Dean Akinmusire and MTP Talent Group.</p>
+
+            {/* Clifford Addison */}
+            <div className="flex flex-col items-center">
+              <div className="mb-8 flex justify-center">
+                <div className="size-48 rounded-full bg-gradient-to-br from-[var(--kelly-green)] to-[var(--base-bg)] flex items-center justify-center text-[var(--text-primary)] font-display text-5xl shadow-xl relative" style={{ padding: '3px' }}>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[var(--neon-green)] to-[var(--kelly-green)] opacity-75 -z-10"></div>
+                  <div className="size-full rounded-full bg-gradient-to-br from-[var(--kelly-green)] to-[var(--base-bg)] flex items-center justify-center">
+                    CA
+                  </div>
+                </div>
+              </div>
+              <h3 className="font-display text-2xl text-[var(--text-primary)] mb-2" style={{ fontWeight: 600, fontSize: '20px' }}>Clifford Addison</h3>
+              <p className="text-[var(--kelly-green)] uppercase tracking-widest text-sm mt-2 mb-8" style={{ fontSize: '14px' }}>CHIEF OF WEBSITE DESIGN AND EFFICIENCY</p>
+              <div className="text-left space-y-6 text-[var(--text-secondary)] leading-relaxed" style={{ fontSize: '14px' }}>
+                <p>As the Chief of Website Design and Efficiency, Clifford Addison brings a professional and detail-oriented awareness to building and maintaining our website. Not only is he the mastermind working in the background, but Clifford also handles website development for our clients. He has a passion for execution and a unique mind for creation, which makes him the perfect team player for any project. He elevates our clients with great pride and goes beyond the status quo to assist in delivering an exceptional result. Clifford possesses a degree in Artificial Intelligence and Data Science, plus another degree in Actuarial Science from his hometown in Ghana.</p>
+                <p>Outside of work, Clifford enjoys watching movies, currency and crypto trading, and discovering new tech.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
